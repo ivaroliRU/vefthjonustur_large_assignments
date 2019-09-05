@@ -1,9 +1,80 @@
 [
-    {
-        "Id":0,
-        "Title":"Crazy strom happened",
-        "ImgSource":"Img",
-        "ShortDescription":"Some news about stuff",
-        "PublishedDate": ""
-    }
-]
+        {
+            "Id":0,
+            "Title":"Crazy strom happened",
+            "ImgSource":"Img",
+            "ShortDescription":"Some news about storm",
+            "LongDescrtiption": "Weather in Iceland was so crazy that people could not get outside",
+            "PublishedDate":"03/05/2019, 14:14:14",
+            "ModifiedBy":"Karl Jónsson",
+            "CreatedDate":"03/04/2019, 15:00:00",
+            "ModifiedDate": "10/05/2019, 14:11:14"
+            
+        },
+    
+        {
+            "Id":1,
+            "Title":"New restaurants in Reykjavík",
+            "ImgSource":"Img1",
+            "ShortDescription":"About popular restaurants",
+            "LongDescrtiption": "Fjallkonan is the most popular resturant today, everybody is tasting the cocktails.",
+            "PublishedDate":"20/10/2019, 20:14:14",
+            "ModifiedBy":"Anna Jónsdóttir",
+            "CreatedDate":"20/06/2019, 15:34:00",
+            "ModifiedDate": "25/10/2019, 21:19:14"
+            
+        },
+    
+        {
+            "Id":2,
+            "Title":"Oktoberfest getting bigger",
+            "ImgSource":"Img2",
+            "ShortDescription":"School festival in Reykjavík",
+            "LongDescrtiption": "Oktoberfest gets bigger by every year, 50.000 people have bought ticket for the weekend",
+            "PublishedDate":"05/09/2019, 13:10:00",
+            "ModifiedBy":"Binni Atlason",
+            "CreatedDate":"03/09/2019, 15:20:00",
+            "ModifiedDate": "25/10/2019, 21:19:14"
+            
+        },
+    
+        {
+            "Id":3,
+            "Title":"Technology and jobs",
+            "ImgSource":"Img3",
+            "ShortDescription":"Technology is making people loose their jobs",
+            "LongDescrtiption": "There is no need for some employees today because of good technology",
+            "PublishedDate":"07/07/2000, 11:10:00",
+            "ModifiedBy":"Gréta Steinarsdóttir",
+            "CreatedDate":"20/06/2000, 16:17:00",
+            "ModifiedDate": "15/08/2003, 20:19:14"
+            
+        },
+    
+        {
+            "Id":4,
+            "Title":"Kókómjólk the best coco drink",
+            "ImgSource":"Img4",
+            "ShortDescription":"Kókómjólk is selling fast these days",
+            "LongDescrtiption": "Sugarfree kókómkjólk is very popular by kids and adults.",
+            "PublishedDate":"08/01/2002, 08:00:00",
+            "ModifiedBy":"Fanney Ómarsdóttir",
+            "CreatedDate":"03/06/2000, 16:17:00",
+            "ModifiedDate": "19/07/2003, 20:19:14"
+            
+        },
+    
+        {
+            "Id":5,
+            "Title":"Kaffitár opnar í HR",
+            "ImgSource":"Img5",
+            "ShortDescription":"Nýr kaffistaður að opna í HR",
+            "LongDescrtiption": "Te og kaffi hefur hætt starfsemi og Kaffitár er komið á sama stað og Te og kaffi var",
+            "PublishedDate":"02/11/2016, 16:20:00",
+            "ModifiedBy":"Reynir Guðmundsson",
+            "CreatedDate":"01/11/2016, 16:17:00",
+            "ModifiedDate": "01/12/2018, 20:20:20"
+            
+        }
+    ]
+    
