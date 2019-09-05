@@ -6,10 +6,22 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TechnicalRadiation.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class NewsItemsController : ControllerBase
     {
-        
+        // GET api/
+        [HttpGet("")]
+        public ActionResult<IEnumerable<string>> GetAllNewsItems()
+        {
+            return new string[] { "value1", "value2" };
+        }
+
+        // GET api/{newsItemId}
+        [HttpGet("{newsItemId:int}")]
+        public ActionResult<IEnumerable<string>> GetNewsItemsById(int newsId)
+        {
+            return new string[] { "Virkarr wooohoooo" };
+        }
     }
 }
