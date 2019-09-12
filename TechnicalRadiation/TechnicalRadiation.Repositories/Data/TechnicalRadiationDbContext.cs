@@ -27,7 +27,7 @@ namespace TechnicalRadiation.Repositories.Data
         {
             get 
             {
-                using (StreamReader r = new StreamReader("author.json"))
+                using (StreamReader r = new StreamReader(dataLocation+"author.json"))
                 {
                     string json = r.ReadToEnd();
                     List<Author> items = JsonConvert.DeserializeObject<List<Author>>(json);
@@ -39,7 +39,7 @@ namespace TechnicalRadiation.Repositories.Data
         {
             get 
             {
-                using (StreamReader r = new StreamReader("category.json"))
+                using (StreamReader r = new StreamReader(dataLocation+"category.json"))
                 {
                     string json = r.ReadToEnd();
                     List<Category> items = JsonConvert.DeserializeObject<List<Category>>(json);

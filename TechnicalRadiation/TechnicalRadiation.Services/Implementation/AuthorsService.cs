@@ -31,16 +31,15 @@ namespace TechnicalRadiation.Services.Implementation
                 i.Links.AddReference("edit", $"/api/authors/{i.Id}");
                 i.Links.AddReference("delete", $"/api/authors/{i.Id}");
                 i.Links.AddReference("newsItems", $"/api/authors/{i.Id}/newsItems");
-                i.Links.AddListReference("newsItemsDetailed", _newsRepository.GetNewsByAuthor(i.Id).Select(a => new { href = $"/api/authors/{a.Id}" }));
-                //i.Links.AddListReference("categories", _categoriesRepository.GetCategoriesById(i.Id).Select(c => new { href = $"/api/categories/{c.Id}" }));
+                //i.Links.AddListReference("newsItemsDetailed", _newsRepository.GetNewsByAuthor(i.Id).Select(a => new { href = $"/api/authors/{a.Id}" }));
             });
 
             return items;
         }
 
-        public IEnumerable<AuthorDto> GetAuthorById(int Id)
+        public AuthorDto GetAuthorById(int Id)
         {
-            return new AuthorDto[] {};
+            return _authorsRepository.GetAuthorById(Id);
         }
     }
 }
