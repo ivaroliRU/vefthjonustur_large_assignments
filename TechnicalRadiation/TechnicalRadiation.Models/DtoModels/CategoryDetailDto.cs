@@ -1,6 +1,8 @@
+using TechnicalRadiation.Models.HyperMedia;
+
 namespace TechnicalRadiation.Models.DtoModels
 {
-    public class CategoryDetailDto
+    public class CategoryDetailDto : HyperMediaModel
     {
         public int Id {
             get;
