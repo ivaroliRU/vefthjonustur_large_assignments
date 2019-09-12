@@ -1,0 +1,36 @@
+[
+     {
+        "Id":0,
+        "Name":"Íþróttir",
+        "Slug" : "Allt sem þú þarft að vita úr íþróttaheiminum",
+        "ModifiedBy":"Karl Jónsson",
+        "CreatedDate":"03/04/2019, 15:00:00",
+        "ModifiedDate": "10/05/2019, 14:11:14"
+      },
+       {
+        "Id":1,
+        "Name":"Veður",
+        "Slug" : "Fréttir um veðrið",
+        "ModifiedBy":"Stefán Jónsson",
+        "CreatedDate":"03/04/2019, 15:00:00",
+        "ModifiedDate": "10/05/2019, 14:11:14"
+      },
+       {
+        "Id":2,
+        "Name":"Frægir",
+        "Slug" : "Helstu fréttir og tilkynningar um fræga fólkið",
+        "ModifiedBy":"Arna Stefánsdóttir",
+        "CreatedDate":"02/03/2019, 15:10:00",
+        "ModifiedDate": "11/05/2019, 13:11:14"
+      },
+      {
+        "Id":3,
+        "Name":"Ýmislegt",
+        "Slug" : "Allt milli himins og jarðar",
+        "ModifiedBy":"Fannar Reynisson",
+        "CreatedDate":"02/11/2013, 16:10:00",
+        "ModifiedDate": "11/11/2015, 16:11:14"
+      }
+  
+  
+  ]
