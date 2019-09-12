@@ -8,14 +8,16 @@ namespace TechnicalRadiation.Repositories.Data
 {
     public class TechnicalRadiationDbContext : ITechnicalRadiationDbContext
     {
+        private string dataLocation = "../TechnicalRadiation.Repositories/Data/";
+
         public IEnumerable<NewsItem> NewsItems
         {
             get 
             {
-                using (StreamReader r = new StreamReader("news.json"))
+                using (StreamReader r = new StreamReader(dataLocation+"news.json"))
                 {
                     string json = r.ReadToEnd();
-                    List<NewsItem> items = JsonConvert.DeserializeObject<List<NewsItem>>(json);
+                    NewsItem[] items = JsonConvert.DeserializeObject<NewsItem[]>(json);
                     return items;
                 }
             }

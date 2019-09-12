@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TechnicalRadiation.Models;
+using TechnicalRadiation.Models.DtoModels;
 using TechnicalRadiation.Services.Interfaces;
 
 namespace TechnicalRadiation.Controllers
@@ -21,9 +22,12 @@ namespace TechnicalRadiation.Controllers
 
         // GET api/
         [HttpGet("")]
-        public ActionResult<IEnumerable<string>> GetAllNewsItems()
+        public ActionResult<Envelope<NewsItemDto>> GetAllNewsItems([FromQuery] int? pageSize, [FromQuery] int pageNumber)
         {
-            return _newsService.GetAllNewsItems();
+            if(pageSize == null){
+                Console.WriteLine("asdfasdfasdf");
+            }
+            return _newsService.GetAllNewsItems(pageSize, pageNumber);
         }
 
         // GET api/{newsItemId}

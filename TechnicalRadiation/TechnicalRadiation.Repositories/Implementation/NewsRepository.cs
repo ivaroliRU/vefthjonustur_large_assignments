@@ -11,22 +11,24 @@ namespace TechnicalRadiation.Repositories.Implementation
 {
     public class NewsRepository : INewsRepository
     {
-        private readonly TechnicalRadiationDbContext _dbContext;
+        private readonly ITechnicalRadiationDbContext _dbContext;
 
-        public NewsRepository(TechnicalRadiationDbContext dbContext)
+        public NewsRepository(ITechnicalRadiationDbContext dbContext)
         {
-            _dbContext = new TechnicalRadiationDbContext();
+            _dbContext = dbContext;
         }
 
         public IEnumerable<NewsItemDto> GetAllNewsItems()
         {
-            return _dbContext.NewsItems.ToList().Select(c => new NewsItemDto
+            var items = _dbContext.NewsItems.ToArray().Select(c => new NewsItemDto
             {
                 Id = c.Id,
                 Title = c.Title,
                 ImgSource = c.ImgSource,
                 ShortDescription = c.ShortDescription
             });
+
+            return items;
         }
     }
 }
