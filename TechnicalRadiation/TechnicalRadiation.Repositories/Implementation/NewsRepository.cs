@@ -30,5 +30,19 @@ namespace TechnicalRadiation.Repositories.Implementation
 
             return items;
         }
+
+        public NewsItemDto GetNewsItemsById(int newsId){
+            var item = (from c in _dbContext.NewsItems
+                        where c.Id == newsId
+                        select new NewsItemDto()
+                        {
+                            Id = c.Id,
+                            Title = c.Title,
+                            ImgSource = c.ImgSource,
+                            ShortDescription = c.ShortDescription
+                        }).FirstOrDefault();
+
+            return item;
+        }
     }
 }

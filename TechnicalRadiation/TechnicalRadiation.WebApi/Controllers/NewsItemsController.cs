@@ -24,17 +24,14 @@ namespace TechnicalRadiation.Controllers
         [HttpGet("")]
         public ActionResult<Envelope<NewsItemDto>> GetAllNewsItems([FromQuery] int? pageSize, [FromQuery] int pageNumber)
         {
-            if(pageSize == null){
-                Console.WriteLine("asdfasdfasdf");
-            }
             return _newsService.GetAllNewsItems(pageSize, pageNumber);
         }
 
         // GET api/{newsItemId}
         [HttpGet("{newsItemId:int}")]
-        public ActionResult<IEnumerable<string>> GetNewsItemsById(int newsId)
+        public ActionResult<NewsItemDto> GetNewsItemsById(int newsItemId)
         {
-            return new string[] { "Virkarr wooohoooo" };
+            return _newsService.GetNewsItemsById(newsItemId);
         }
     }
 }

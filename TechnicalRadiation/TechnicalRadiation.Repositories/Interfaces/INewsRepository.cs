@@ -9,5 +9,6 @@ namespace TechnicalRadiation.Repositories.Interfaces
     public interface INewsRepository
     {
         IEnumerable<NewsItemDto> GetAllNewsItems();
+        NewsItemDto GetNewsItemsById(int newsId);
     }
 }
