@@ -11,6 +11,7 @@ namespace TechnicalRadiation.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
+        
         // GET api/categories/
         [HttpGet("")]
         public ActionResult<IEnumerable<string>> GetAllCategories()
