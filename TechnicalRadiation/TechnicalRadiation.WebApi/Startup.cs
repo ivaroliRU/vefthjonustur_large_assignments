@@ -10,6 +10,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using TechnicalRadiation.Repositories.Data;
+using TechnicalRadiation.Repositories.Interfaces;
+using TechnicalRadiation.Repositories.Implementation;
+using TechnicalRadiation.Services.Interfaces;
+using TechnicalRadiation.Services.Implementation;
 
 namespace TechnicalRadiation.WebApi
 {
@@ -26,6 +31,15 @@ namespace TechnicalRadiation.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddTransient<INewsService, NewsService>();
+            services.AddTransient<IAuthorsService, AuthorsService>();
+            services.AddTransient<ICategoriesService, CategoriesService>();
+            services.AddTransient<INewsRepository, NewsRepository>();
+            services.AddTransient<IAuthorsRepository, AuthorsRepository>();
+            services.AddTransient<ICategoriesRepository, CategoriesRepository>();
+
+            services.AddSingleton<ITechnicalRadiationDbContext, TechnicalRadiationDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

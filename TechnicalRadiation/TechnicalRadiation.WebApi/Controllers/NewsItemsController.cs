@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TechnicalRadiation.Models;
+using TechnicalRadiation.Services.Interfaces;
 
 namespace TechnicalRadiation.Controllers
 {
@@ -11,6 +12,13 @@ namespace TechnicalRadiation.Controllers
     [ApiController]
     public class NewsItemsController : ControllerBase
     {
+        private readonly INewsService _newsService;
+
+        public NewsItemsController(INewsService newsService)
+        {
+            _newsService = newsService;
+        }
+
         // GET api/
         [HttpGet("")]
         public ActionResult<IEnumerable<string>> GetAllNewsItems()
