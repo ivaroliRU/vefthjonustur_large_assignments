@@ -30,7 +30,8 @@ namespace TechnicalRadiation.Repositories.Implementation
 
             return items;
         }
-         public CategoryDetailDto GetCategoryById(int categoryId){
+
+        public CategoryDetailDto GetCategoryById(int categoryId){
             var item = (from c in _dbContext.Category
                         where c.Id == categoryId
                         select new CategoryDetailDto()

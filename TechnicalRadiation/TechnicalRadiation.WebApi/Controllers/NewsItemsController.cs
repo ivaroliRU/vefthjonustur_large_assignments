@@ -22,7 +22,7 @@ namespace TechnicalRadiation.Controllers
 
         // GET api/
         [HttpGet("")]
-        public ActionResult<Envelope<NewsItemDto>> GetAllNewsItems([FromQuery] int? pageSize, [FromQuery] int pageNumber)
+        public ActionResult<Envelope<NewsItemDto>> GetAllNewsItems([FromQuery] int pageSize = 25, [FromQuery] int pageNumber = 1)
         {
             return _newsService.GetAllNewsItems(pageSize, pageNumber);
         }

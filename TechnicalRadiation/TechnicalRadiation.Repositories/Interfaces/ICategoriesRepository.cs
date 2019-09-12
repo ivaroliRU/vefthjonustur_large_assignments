@@ -8,6 +8,7 @@ namespace TechnicalRadiation.Repositories.Interfaces
 {
     public interface ICategoriesRepository
     {
-
+        IEnumerable<CategoryDetailDto> GetAllCategories();
+        CategoryDetailDto GetCategoryById(int categoryId);
     }
 }

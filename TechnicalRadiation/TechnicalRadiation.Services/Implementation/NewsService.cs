@@ -18,16 +18,10 @@ namespace TechnicalRadiation.Services.Implementation
             _newsRepository = newsRepository;
         }
 
-        public Envelope<NewsItemDto> GetAllNewsItems(int? pageSize, int pageNumber){
-            int acutalPSize = 25;
-
-            if(pageSize != null){
-                acutalPSize = (int)pageSize;
-            }
-
+        public Envelope<NewsItemDto> GetAllNewsItems(int pageSize, int pageNumber){
             IEnumerable<NewsItemDto> items = _newsRepository.GetAllNewsItems();
-            IEnumerable<IEnumerable<NewsItemDto>> pages = PageHelper.SplitIntoPages<NewsItemDto>(items, acutalPSize);
-            IEnumerable<NewsItemDto> page = pages.ToList()[pageNumber];
+            IEnumerable<IEnumerable<NewsItemDto>> pages = PageHelper.SplitIntoPages<NewsItemDto>(items, pageSize);
+            IEnumerable<NewsItemDto> page = pages.ToList()[pageNumber-1];
             Envelope<NewsItemDto> envelopes = EnvelopeHelper<NewsItemDto>.ListToEnvelope(page, pageNumber);
 
             return envelopes;

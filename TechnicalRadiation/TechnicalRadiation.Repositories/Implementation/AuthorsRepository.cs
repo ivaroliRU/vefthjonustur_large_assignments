@@ -16,6 +16,7 @@ namespace TechnicalRadiation.Repositories.Implementation
         {
             _dbContext = dbContext;
         }
+
         public IEnumerable<AuthorDto> GetAllAuthors()
         {
             var items = _dbContext.Author.ToArray().Select(c => new AuthorDto
@@ -27,7 +28,8 @@ namespace TechnicalRadiation.Repositories.Implementation
 
             return items;
         }
-         public AuthorDto GetAuthorById(int authorId){
+
+        public AuthorDto GetAuthorById(int authorId){
             var item = (from c in _dbContext.Author
                         where c.Id == authorId
                         select new AuthorDto()
