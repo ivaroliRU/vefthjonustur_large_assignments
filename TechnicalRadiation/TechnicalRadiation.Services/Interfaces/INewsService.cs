@@ -10,5 +10,6 @@ namespace TechnicalRadiation.Services.Interfaces
     public interface INewsService
     {
         Envelope<NewsItemDto> GetAllNewsItems(int? pageSize, int pageNumber);
+        NewsItemDto GetNewsItemsById(int newsId);
     }
 }

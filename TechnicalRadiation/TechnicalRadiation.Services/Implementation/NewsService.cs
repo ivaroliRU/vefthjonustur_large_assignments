@@ -32,5 +32,10 @@ namespace TechnicalRadiation.Services.Implementation
 
             return envelopes;
         }
+
+        public NewsItemDto GetNewsItemsById(int newsId){
+            var item = _newsRepository.GetNewsItemsById(newsId);
+            return item;
+        }
     }
 }
