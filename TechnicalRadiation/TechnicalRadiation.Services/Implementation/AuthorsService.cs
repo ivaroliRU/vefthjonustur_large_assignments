@@ -14,5 +14,10 @@ namespace TechnicalRadiation.Services.Implementation
         {
             return new AuthorDto[] {};
         }
+
+        public IEnumerable<AuthorDto> GetAllAuthorsById(int Id)
+        {
+            return new AuthorDto[] {};
+        }
     }
 }

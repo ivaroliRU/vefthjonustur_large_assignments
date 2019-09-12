@@ -1,4 +1,4 @@
-using TechnicalRadiation.Models;
+using TechnicalRadiation.Models.HyperMedia;
 
 namespace TechnicalRadiation.Models.DtoModels
 {
