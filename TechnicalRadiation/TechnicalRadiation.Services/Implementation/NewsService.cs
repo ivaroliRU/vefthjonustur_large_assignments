@@ -34,14 +34,10 @@ namespace TechnicalRadiation.Services.Implementation
                 //i.Links.AddListReference("categories", _categoriesRepository.GetCategoriesById(i.Id).Select(c => new { href = $"/api/categories/{c.Id}" }));
             });
 
-            IEnumerable<IEnumerable<NewsItemDto>> pages = PageHelper.SplitIntoPages<NewsItemDto>(items, pageSize);
-            IEnumerable<NewsItemDto> page = pages.ToList()[pageNumber-1];
-            Envelope<NewsItemDto> envelopes = EnvelopeHelper<NewsItemDto>.ListToEnvelope(page, pageNumber);
-
-            return envelopes;
+            return new Envelope<NewsItemDto>(pageNumber, pageSize, items);
         }
 
-        public NewsItemDto GetNewsItemsById(int newsId){
+        public NewsItemDetailDto GetNewsItemsById(int newsId){
             var item = _newsRepository.GetNewsItemsById(newsId);
             return item;
         }

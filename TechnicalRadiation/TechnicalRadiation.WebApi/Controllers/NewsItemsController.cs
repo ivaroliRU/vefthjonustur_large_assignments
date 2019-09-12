@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using TechnicalRadiation.Models.HyperMedia;
-using TechnicalRadiation.Models.DtoModels;
 using TechnicalRadiation.Models;
+using TechnicalRadiation.Models.DtoModels;
 using TechnicalRadiation.Services.Interfaces;
 
 namespace TechnicalRadiation.Controllers
@@ -25,14 +24,14 @@ namespace TechnicalRadiation.Controllers
         [HttpGet("")]
         public ActionResult<Envelope<NewsItemDto>> GetAllNewsItems([FromQuery] int pageSize = 25, [FromQuery] int pageNumber = 1)
         {
-            return _newsService.GetAllNewsItems(pageSize, pageNumber);
+            return Ok(_newsService.GetAllNewsItems(pageSize, pageNumber));
         }
 
         // GET api/{newsItemId}
         [HttpGet("{newsItemId:int}")]
         public ActionResult<NewsItemDto> GetNewsItemsById(int newsItemId)
         {
-            return _newsService.GetNewsItemsById(newsItemId);
+            return Ok(_newsService.GetNewsItemsById(newsItemId));
         }
     }
 }

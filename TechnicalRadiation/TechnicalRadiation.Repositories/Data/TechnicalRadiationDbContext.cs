@@ -22,6 +22,7 @@ namespace TechnicalRadiation.Repositories.Data
                 }
             }
         }
+
         public IEnumerable<Author> Author
         {
             get 

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using TechnicalRadiation.Repositories;
+using TechnicalRadiation.Models.DtoModels;
+using TechnicalRadiation.Services.Interfaces;
 
 namespace TechnicalRadiation.Controllers
 {
@@ -11,18 +12,25 @@ namespace TechnicalRadiation.Controllers
     [ApiController]
     public class AuthorsController : ControllerBase
     {
+        private readonly IAuthorsService _authorsService;
+
+        public AuthorsController(IAuthorsService authorsService)
+        {
+            _authorsService = authorsService;
+        }
+
         // GET api/authors/
         [HttpGet("")]
-        public ActionResult<IEnumerable<string>> GetAllAuthors()
+        public ActionResult<IEnumerable<NewsItemDto>> GetAllAuthors()
         {
-            return new string[] { "..." };
+            return Ok(_authorsService.GetAllAuthors());
         }
 
         // GET api/authors/{authorId}
         [HttpGet("{authorId:int}")]
         public ActionResult<IEnumerable<string>> GetAuthorById(int authorId)
         {
-            return new string[] { "Duddi" };
+            return Ok(_authorsService.GetAuthorById(authorId));
         }
 
         // GET api/authors/{}/newsItems

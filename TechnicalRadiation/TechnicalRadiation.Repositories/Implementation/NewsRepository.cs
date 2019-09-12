@@ -31,15 +31,21 @@ namespace TechnicalRadiation.Repositories.Implementation
             return items;
         }
 
-        public NewsItemDto GetNewsItemsById(int newsId){
+        public IEnumerable<NewsItemDto> GetNewsByAuthor(int authorId){
+            return null;
+        }
+
+        public NewsItemDetailDto GetNewsItemsById(int newsId){
             var item = (from c in _dbContext.NewsItems
                         where c.Id == newsId
-                        select new NewsItemDto()
+                        select new NewsItemDetailDto()
                         {
                             Id = c.Id,
                             Title = c.Title,
                             ImgSource = c.ImgSource,
-                            ShortDescription = c.ShortDescription
+                            ShortDescription = c.ShortDescription,
+                            LongDescription = c.LongDescription,
+                            PublishDate = c.PublishedDate
                         }).FirstOrDefault();
 
             return item;
