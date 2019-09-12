@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 using TechnicalRadiation.Models.EntityModels;
 using TechnicalRadiation.Models.DtoModels;
 using TechnicalRadiation.Repositories.Data;
+using TechnicalRadiation.Repositories.Interfaces;
 
-namespace TechnicalRadiation.Repositories
+namespace TechnicalRadiation.Repositories.Implementation
 {
-    public class NewsRepository
+    public class NewsRepository : INewsRepository
     {
         private readonly TechnicalRadiationDbContext _dbContext;
 

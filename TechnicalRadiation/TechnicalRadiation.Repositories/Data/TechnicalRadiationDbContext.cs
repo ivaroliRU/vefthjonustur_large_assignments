@@ -6,9 +6,9 @@ using Newtonsoft.Json;
 
 namespace TechnicalRadiation.Repositories.Data
 {
-    public class TechnicalRadiationDbContext
+    public class TechnicalRadiationDbContext : ITechnicalRadiationDbContext
     {
-        public IEnumerable<NewsItem> NewsItems 
+        public IEnumerable<NewsItem> NewsItems
         {
             get 
             {

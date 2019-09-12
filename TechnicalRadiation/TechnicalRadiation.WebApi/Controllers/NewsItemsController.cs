@@ -23,7 +23,7 @@ namespace TechnicalRadiation.Controllers
         [HttpGet("")]
         public ActionResult<IEnumerable<string>> GetAllNewsItems()
         {
-            return new string[] { "value1", "value2" };
+            return _newsService.GetAllNewsItems();
         }
 
         // GET api/{newsItemId}
