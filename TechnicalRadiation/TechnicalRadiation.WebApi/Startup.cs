@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace TechnicalRadiation
+namespace TechnicalRadiation.WebApi
 {
     public class Startup
     {
