@@ -8,5 +8,8 @@ namespace TechnicalRadiation.Repositories.Data
     public interface ITechnicalRadiationDbContext
     {
         IEnumerable<NewsItem> NewsItems{get;}
+        IEnumerable<Category> Category{get;}
+
+        IEnumerable<Author> Author{get;}
     }
 }
