@@ -7,6 +7,7 @@ using TechnicalRadiation.Repositories.Interfaces;
 using TechnicalRadiation.Models;
 using TechnicalRadiation.Models.HyperMedia;
 using TechnicalRadiation.Models.DtoModels;
+using TechnicalRadiation.Models.InputModels;
 using TechnicalRadiation.Common;
 
 namespace TechnicalRadiation.Services.Implementation
@@ -47,6 +48,18 @@ namespace TechnicalRadiation.Services.Implementation
             });
 
             return items;
+        }
+
+        public int CreateNewsItem(NewsItemInputModel item){
+            return _newsRepository.CreateNewsItem(item);
+        }
+
+        public int UpdateNewsItemById(int newsId, NewsItemInputModel item){
+            return _newsRepository.UpdateNewsItemById(newsId, item);
+        }
+
+        public int DeleteNewsItemById(int newsId){
+            return _newsRepository.DeleteNewsItemById(newsId);
         }
     }
 }

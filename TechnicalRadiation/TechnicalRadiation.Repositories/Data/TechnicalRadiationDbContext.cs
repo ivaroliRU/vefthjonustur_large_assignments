@@ -19,14 +19,14 @@ namespace TechnicalRadiation.Repositories.Data
 
         public TechnicalRadiationDbContext()
         {
-            DataHelper.DataToList(newItemAuthorsList, dataLocation+"news_author.json");
-            DataHelper.DataToList(NewsItemCategoriesList, dataLocation+"news_category.json");
-            DataHelper.DataToList(NewsItemsList, dataLocation+"news.json");
-            DataHelper.DataToList(AuthorList, dataLocation+"author.json");
-            DataHelper.DataToList(CategoryList, dataLocation+"category.json");
+            DataHelper.DataToList(out newItemAuthorsList, dataLocation+"news_author.json");
+            DataHelper.DataToList(out NewsItemCategoriesList, dataLocation+"news_category.json");
+            DataHelper.DataToList(out NewsItemsList, dataLocation+"news.json");
+            DataHelper.DataToList(out AuthorList, dataLocation+"author.json");
+            DataHelper.DataToList(out CategoryList, dataLocation+"category.json");
         }
 
-        public IEnumerable<NewsItemAuthors> NewsItemAuthor
+        public List<NewsItemAuthors> NewsItemAuthor
         {
             get 
             {
@@ -34,7 +34,7 @@ namespace TechnicalRadiation.Repositories.Data
             }
         }
 
-        public IEnumerable<NewsItemCategories> NewsItemCategories
+        public List<NewsItemCategories> NewsItemCategories
         {
             get 
             {
@@ -42,7 +42,7 @@ namespace TechnicalRadiation.Repositories.Data
             }
         }
 
-        public IEnumerable<NewsItem> NewsItems
+        public List<NewsItem> NewsItems
         {
             get 
             {
@@ -50,14 +50,14 @@ namespace TechnicalRadiation.Repositories.Data
             }
         }
 
-        public IEnumerable<Author> Author
+        public List<Author> Author
         {
             get 
             {
                 return AuthorList;
             }
         }
-        public IEnumerable<Category> Category
+        public List<Category> Category
         {
             get 
             {

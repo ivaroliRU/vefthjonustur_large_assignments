@@ -7,12 +7,13 @@ namespace TechnicalRadiation.Common
 {
     public static class DataHelper
     {
-        public static void DataToList<T>(this IEnumerable<T> d, string dataLocation)
+        public static void DataToList<T>(out List<T> d, string dataLocation)
         {
             using (StreamReader r = new StreamReader(dataLocation))
             {
                 string json = r.ReadToEnd();
-                d = JsonConvert.DeserializeObject<T[]>(json);
+                Console.WriteLine(json);
+                d = JsonConvert.DeserializeObject<List<T>>(json);
             }
         }
     }

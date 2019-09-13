@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TechnicalRadiation.Models.EntityModels;
 using TechnicalRadiation.Models.DtoModels;
+using TechnicalRadiation.Models.InputModels;
 using TechnicalRadiation.Repositories.Data;
 using TechnicalRadiation.Repositories.Interfaces;
 
@@ -60,6 +61,38 @@ namespace TechnicalRadiation.Repositories.Implementation
                         }).FirstOrDefault();
 
             return item;
+        }
+
+        public int CreateNewsItem(NewsItemInputModel item){
+            int id = _dbContext.NewsItems.Count();
+
+            _dbContext.NewsItems.Add(new NewsItem(){
+                Id = id,
+                Title = item.Title,
+                ImgSource = item.ImgSource,
+                ShortDescription = item.ShortDescription,
+                LongDescription = item.LongDescription,
+                PublishedDate = item.PublishDate
+            });
+
+            return id;
+        }
+
+        public int UpdateNewsItemById(int newsId, NewsItemInputModel item){
+            _dbContext.NewsItems[newsId] = new NewsItem(){
+                Title = item.Title,
+                ImgSource = item.ImgSource,
+                ShortDescription = item.ShortDescription,
+                LongDescription = item.LongDescription,
+                PublishedDate = item.PublishDate
+            };
+
+            return newsId;
+        }
+
+        public int DeleteNewsItemById(int newsId){
+            _dbContext.NewsItems.RemoveAt(newsId);
+            return newsId;
         }
     }
 }

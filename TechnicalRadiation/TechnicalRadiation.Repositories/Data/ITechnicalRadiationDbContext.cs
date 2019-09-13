@@ -7,10 +7,10 @@ namespace TechnicalRadiation.Repositories.Data
 {
     public interface ITechnicalRadiationDbContext
     {
-        IEnumerable<NewsItem> NewsItems{get;}
-        IEnumerable<Category> Category{get;}
-        IEnumerable<Author> Author{get;}
-        IEnumerable<NewsItemCategories> NewsItemCategories{get;}
-        IEnumerable<NewsItemAuthors> NewsItemAuthor{get;}
+        List<NewsItem> NewsItems{get;}
+        List<Category> Category{get;}
+        List<Author> Author{get;}
+        List<NewsItemCategories> NewsItemCategories{get;}
+        List<NewsItemAuthors> NewsItemAuthor{get;}
     }
 }

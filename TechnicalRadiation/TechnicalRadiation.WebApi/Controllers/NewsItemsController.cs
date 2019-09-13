@@ -30,6 +30,14 @@ namespace TechnicalRadiation.Controllers
             return Ok(_newsService.GetAllNewsItems(pageSize, pageNumber));
         }
 
+        // GET api/{newsItemId}
+        [HttpGet]
+        [Route("{newsItemId:int}", Name = "GetNewsItemsById")]
+        public ActionResult<NewsItemDto> GetNewsItemsById(int newsItemId)
+        {
+            return Ok(_newsService.GetNewsItemsById(newsItemId));
+        }
+
         // POST api/
         [HttpPost("")]
         [Authorization]
@@ -37,16 +45,31 @@ namespace TechnicalRadiation.Controllers
         {
             if (!ModelState.IsValid) { return StatusCode(412, news); }
 
-            var id = 0;//do some stuff
+            var id = _newsService.CreateNewsItem(news);
 
             return Ok();//CreatedAtRoute("GetNewsItemsById", new { id }, null);
         }
 
-        // GET api/{newsItemId}
-        [HttpGet("{newsItemId:int}")]
-        public ActionResult<NewsItemDto> GetNewsItemsById(int newsItemId)
+        // PUT api/{newsItemId}
+        [HttpPut("{newsItemId:int}")]
+        [Authorization]
+        public ActionResult UpdateNewsItemById([FromBody] NewsItemInputModel news, int newsItemId)
         {
-            return Ok(_newsService.GetNewsItemsById(newsItemId));
+            if (!ModelState.IsValid) { return StatusCode(412, news); }
+
+            var id = _newsService.UpdateNewsItemById(newsItemId, news);
+
+            return Ok();
+        }
+
+        // PUT api/{newsItemId}
+        [HttpDelete("{newsItemId:int}")]
+        [Authorization]
+        public ActionResult DeleteNewsItemById(int newsItemId)
+        {
+            var id = _newsService.DeleteNewsItemById(newsItemId);
+
+            return Ok();
         }
     }
 }
