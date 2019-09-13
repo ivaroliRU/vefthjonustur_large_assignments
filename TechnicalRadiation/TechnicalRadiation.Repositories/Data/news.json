@@ -1,78 +1,327 @@
 [
-            {
-                "Id":0,
-                "Title":"Crazy strom happened",
-                "ImgSource":"Img",
-                "ShortDescription":"Some news about storm",
-                "LongDescrtiption": "Weather in Iceland was so crazy that people could not get outside",
-                "PublishedDate":"03/05/2019, 14:14:14",
-                "ModifiedBy":"Karl Jónsson",
-                "CreatedDate":"03/04/2019, 15:00:00",
-                "ModifiedDate": "10/05/2019, 14:11:14"
-            },
-            {
-                "Id":1,
-                "Title":"New restaurants in Reykjavík",
-                "ImgSource":"Img1",
-                "ShortDescription":"About popular restaurants",
-                "LongDescrtiption": "Fjallkonan is the most popular resturant today, everybody is tasting the cocktails.",
-                "PublishedDate":"10/20/2019, 20:14:14",
-                "ModifiedBy":"Anna Jónsdóttir",
-                "CreatedDate":"06/20/2019, 15:34:00",
-                "ModifiedDate": "10/25/2019, 21:19:14"
-                
-            },
-        
-            {
-                "Id":2,
-                "Title":"Oktoberfest getting bigger",
-                "ImgSource":"Img2",
-                "ShortDescription":"School festival in Reykjavík",
-                "LongDescrtiption": "Oktoberfest gets bigger by every year, 50.000 people have bought ticket for the weekend",
-                "PublishedDate":"05/09/2019, 13:10:00",
-                "ModifiedBy":"Binni Atlason",
-                "CreatedDate":"03/09/2019, 15:20:00",
-                "ModifiedDate": "10/25/2019, 21:19:14"
-                
-            },
-        
-            {
-                "Id":3,
-                "Title":"Technology and jobs",
-                "ImgSource":"Img3",
-                "ShortDescription":"Technology is making people loose their jobs",
-                "LongDescrtiption": "There is no need for some employees today because of good technology",
-                "PublishedDate":"07/07/2000, 11:10:00",
-                "ModifiedBy":"Gréta Steinarsdóttir",
-                "CreatedDate":"06/20/2000, 16:17:00",
-                "ModifiedDate": "08/15/2003, 20:19:14"
-                
-            },
-        
-            {
-                "Id":4,
-                "Title":"Kókómjólk the best coco drink",
-                "ImgSource":"Img4",
-                "ShortDescription":"Kókómjólk is selling fast these days",
-                "LongDescrtiption": "Sugarfree kókómkjólk is very popular by kids and adults.",
-                "PublishedDate":"08/01/2002, 08:00:00",
-                "ModifiedBy":"Fanney Ómarsdóttir",
-                "CreatedDate":"03/06/2000, 16:17:00",
-                "ModifiedDate": "07/19/2003, 20:19:14"
-                
-            },
-        
-            {
-                "Id":5,
-                "Title":"Kaffitár opnar í HR",
-                "ImgSource":"Img5",
-                "ShortDescription":"Nýr kaffistaður að opna í HR",
-                "LongDescrtiption": "Te og kaffi hefur hætt starfsemi og Kaffitár er komið á sama stað og Te og kaffi var",
-                "PublishedDate":"02/11/2016, 16:20:00",
-                "ModifiedBy":"Reynir Guðmundsson",
-                "CreatedDate":"01/11/2016, 16:17:00",
-                "ModifiedDate": "01/12/2018, 20:20:20"
-                
-            }
-    ]
-    
+                {
+                    "Id":0,
+                    "Title":"Crazy strom happened",
+                    "ImgSource":"Img",
+                    "ShortDescription":"Some news about storm",
+                    "LongDescrtiption": "Weather in Iceland was so crazy that people could not get outside",
+                    "PublishedDate":"03/05/2019, 14:14:14",
+                    "ModifiedBy":"Karl Jónsson",
+                    "CreatedDate":"03/04/2019, 15:00:00",
+                    "ModifiedDate": "10/05/2019, 14:11:14"
+                    
+                },
+            
+                {
+                    "Id":1,
+                    "Title":"New restaurants in Reykjavík",
+                    "ImgSource":"Img1",
+                    "ShortDescription":"About popular restaurants",
+                    "LongDescrtiption": "Fjallkonan is the most popular resturant today, everybody is tasting the cocktails.",
+                    "PublishedDate":"20/10/2019, 20:14:14",
+                    "ModifiedBy":"Anna Jónsdóttir",
+                    "CreatedDate":"20/06/2019, 15:34:00",
+                    "ModifiedDate": "25/10/2019, 21:19:14"
+                    
+                },
+            
+                {
+                    "Id":2,
+                    "Title":"Oktoberfest getting bigger",
+                    "ImgSource":"Img2",
+                    "ShortDescription":"School festival in Reykjavík",
+                    "LongDescrtiption": "Oktoberfest gets bigger by every year, 50.000 people have bought ticket for the weekend",
+                    "PublishedDate":"05/09/2019, 13:10:00",
+                    "ModifiedBy":"Binni Atlason",
+                    "CreatedDate":"03/09/2019, 15:20:00",
+                    "ModifiedDate": "25/10/2019, 21:19:14"
+                    
+                },
+            
+                {
+                    "Id":3,
+                    "Title":"Technology and jobs",
+                    "ImgSource":"Img3",
+                    "ShortDescription":"Technology is making people loose their jobs",
+                    "LongDescrtiption": "There is no need for some employees today because of good technology",
+                    "PublishedDate":"07/07/2000, 11:10:00",
+                    "ModifiedBy":"Gréta Steinarsdóttir",
+                    "CreatedDate":"20/06/2000, 16:17:00",
+                    "ModifiedDate": "15/08/2003, 20:19:14"
+                    
+                },
+            
+                {
+                    "Id":4,
+                    "Title":"Kókómjólk the best coco drink",
+                    "ImgSource":"Img4",
+                    "ShortDescription":"Kókómjólk is selling fast these days",
+                    "LongDescrtiption": "Sugarfree kókómkjólk is very popular by kids and adults.",
+                    "PublishedDate":"08/01/2002, 08:00:00",
+                    "ModifiedBy":"Fanney Ómarsdóttir",
+                    "CreatedDate":"03/06/2000, 16:17:00",
+                    "ModifiedDate": "19/07/2003, 20:19:14"
+                    
+                },
+            
+                {
+                    "Id":5,
+                    "Title":"Kaffitár opnar í HR",
+                    "ImgSource":"Img5",
+                    "ShortDescription":"Nýr kaffistaður að opna í HR",
+                    "LongDescrtiption": "Te og kaffi hefur hætt starfsemi og Kaffitár er komið á sama stað og Te og kaffi var",
+                    "PublishedDate":"02/11/2016, 16:20:00",
+                    "ModifiedBy":"Reynir Guðmundsson",
+                    "CreatedDate":"01/11/2016, 16:17:00",
+                    "ModifiedDate": "01/12/2018, 20:20:20"
+                    
+                },
+        
+                {
+                    "Id":6,
+                    "Title":"Spáir snjókomu",
+                    "ImgSource":"Img6",
+                    "ShortDescription":"Snjókoma á Akureyti",
+                    "LongDescrtiption": "Næsta laugardag munu falla snjókorn á Akureyri",
+                    "PublishedDate":"03/12/2016, 15:20:00",
+                    "ModifiedBy":"Reynir Guðmundsson",
+                    "CreatedDate":"01/11/2015, 16:17:00",
+                    "ModifiedDate": "01/12/2018, 20:20:20"
+                    
+                },
+                {
+                    "Id":7,
+                    "Title":"Þór Þorlákshöfn Íslandsmeistarar",
+                    "ImgSource":"Img7",
+                    "ShortDescription":"Þórsarar tóku titilinn í gær",
+                    "LongDescrtiption": "Þórsarar unnu íslandsmeistaratitilinn í gær á móti KR",
+                    "PublishedDate":"03/12/2016, 15:20:00",
+                    "ModifiedBy":"Reynir Guðmundsson",
+                    "CreatedDate":"01/11/2015, 16:17:00",
+                    "ModifiedDate": "01/12/2018, 20:20:20"
+                    
+                },
+                {
+                    "Id":8,
+                    "Title":"Vefþjónustur",
+                    "ImgSource":"Img8",
+                    "ShortDescription":"Vefþjónsur er áfangi í tölvunarfræði",
+                    "LongDescrtiption": "Vefþjónustur eru kenndar í HR og kennarinn heitir Arnar",
+                    "PublishedDate":"03/12/2016, 15:20:00",
+                    "ModifiedBy":"Reynir Guðmundsson",
+                    "CreatedDate":"01/11/2015, 16:17:00",
+                    "ModifiedDate": "01/12/2018, 20:20:20"
+                    
+                },
+        
+        {
+                    "Id":9,
+                    "Title":"Mac eða Windows?",
+                    "ImgSource":"Img9",
+                    "ShortDescription":"Hvort er betra",
+                    "LongDescrtiption": "Skiptar skoðanir eru á hvort betra sé að vera á macca eða windows",
+                    "PublishedDate":"03/12/2016, 15:20:00",
+                    "ModifiedBy":"Reynir Guðmundsson",
+                    "CreatedDate":"01/11/2015, 16:17:00",
+                    "ModifiedDate": "01/12/2018, 20:20:20"
+                    
+                },
+            {
+                    "Id":10,
+                    "Title":"Pizzur eða burger?",
+                    "ImgSource":"Img10",
+                    "ShortDescription":"Hvort er betra",
+                    "LongDescrtiption": "Skiptar skoðanir eru á hvort betra sé að borða pizzu eða burger",
+                    "PublishedDate":"03/12/2016, 15:20:00",
+                    "ModifiedBy":"Reynir Guðmundsson",
+                    "CreatedDate":"01/11/2015, 16:17:00",
+                    "ModifiedDate": "01/12/2018, 20:20:20"
+                    
+                },
+                {
+                    "Id":11,
+                    "Title":"Ed sheeran á Íslandi",
+                    "ImgSource":"Img11",
+                    "ShortDescription":"Tónleikar",
+                    "LongDescrtiption": "Ed sheeran heldur tónleika í Laugardagshöll",
+                    "PublishedDate":"02/11/2016, 15:20:00",
+                    "ModifiedBy":"Jón Jónsson",
+                    "CreatedDate":"01/07/2015, 16:17:00",
+                    "ModifiedDate": "01/01/2018, 20:20:20"
+                    
+                },
+        
+                {
+                    "Id":12,
+                    "Title":"Beyonvce á Íslandi",
+                    "ImgSource":"Img12",
+                    "ShortDescription":"Tónleikar",
+                    "LongDescrtiption": "Beyonce heldur tónleika í Laugardagshöll",
+                    "PublishedDate":"02/11/2016, 15:20:00",
+                    "ModifiedBy":"Jón Jónsson",
+                    "CreatedDate":"01/07/2015, 16:17:00",
+                    "ModifiedDate": "01/01/2018, 20:20:20"
+                    
+                },
+                 {
+                        "Id":13,
+                        "Title":"JB á Íslandi",
+                        "ImgSource":"Img13",
+                        "ShortDescription":"Tónleikar",
+                        "LongDescrtiption": "Justin Bieber heldur tónleika í Laugardagshöll",
+                        "PublishedDate":"02/11/2016, 15:20:00",
+                        "ModifiedBy":"Jón Jónsson",
+                        "CreatedDate":"01/07/2015, 16:17:00",
+                        "ModifiedDate": "01/01/2018, 20:20:20"
+                        
+                    },
+        
+                    {
+                        "Id":14,
+                        "Title":"Árekstur á miklubraut",
+                        "ImgSource":"Img14",
+                        "ShortDescription":"Hættulegur árekstur",
+                        "LongDescrtiption": "Tveir bílar lentu saman á miklubrautinni í morgun",
+                        "PublishedDate":"02/11/2016, 15:20:00",
+                        "ModifiedBy":"Jón Pétursson",
+                        "CreatedDate":"01/03/2015, 16:15:00",
+                        "ModifiedDate": "01/03/2018, 20:11:20"
+                        
+                    },
+        
+        
+                    {
+                        "Id":15,
+                        "Title":"Lion King í bíó",
+                        "ImgSource":"Img15",
+                        "ShortDescription":"Frumsýnd í bíó 13. apríl",
+                        "LongDescrtiption": "Uppselt er á Lion King sem sýnd verður eftir nokkra daga í bíó",
+                        "PublishedDate":"02/11/2016, 15:20:00",
+                        "ModifiedBy":"Jón Pétursson",
+                        "CreatedDate":"01/03/2015, 16:15:00",
+                        "ModifiedDate": "01/03/2018, 20:11:20"
+                        
+                    },
+        
+                     {
+                        "Id":16,
+                        "Title":"Vscode",
+                        "ImgSource":"Img16",
+                        "ShortDescription":"Visual studio code",
+                        "LongDescrtiption": "Good program for all programmers",
+                        "PublishedDate":"02/11/2016, 15:20:00",
+                        "ModifiedBy":"Jón Pétursson",
+                        "CreatedDate":"01/03/2015, 16:15:00",
+                        "ModifiedDate": "01/03/2018, 20:11:20"
+                        
+                    },
+                    {
+                        "Id":17,
+                        "Title":"Nike Air opnar á nýjum stað",
+                        "ImgSource":"Img17",
+                        "ShortDescription":"Ný íþróttavöru verslun hefur opnað",
+                        "LongDescrtiption": "Nike Air hefur opnað í Mjóddinni",
+                        "PublishedDate":"01/11/2010, 15:20:00",
+                        "ModifiedBy":"Anna Hulda Grétarsdóttir",
+                        "CreatedDate":"02/03/2009, 16:15:00",
+                        "ModifiedDate": "01/03/2011, 20:11:20"
+                        
+                    },
+                    {
+                        "Id":18,
+                        "Title":"Liverpool meistarar",
+                        "ImgSource":"Img18",
+                        "ShortDescription":"Unnu meistaratitilinn",
+                        "LongDescrtiption": "Liverpool náði sér í meistaratitilinn eftir að hafa unnið Tottenham",
+                        "PublishedDate":"01/11/2010, 15:20:00",
+                        "ModifiedBy":"Anna Hulda Grétarsdóttir",
+                        "CreatedDate":"02/03/2009, 16:15:00",
+                        "ModifiedDate": "01/03/2011, 20:11:20"
+                        
+                    },
+                     {
+                        "Id":19,
+                        "Title":"Enski boltinn komin á nýja stöð",
+                        "ImgSource":"Img19",
+                        "ShortDescription":"Enski boltinn ekki lengur á stöð 2 sport",
+                        "LongDescrtiption": "Sjónvarp símans mun sýna Enska boltann í vetur",
+                        "PublishedDate":"01/11/2019, 15:20:00",
+                        "ModifiedBy":"Anna Hulda Grétarsdóttir",
+                        "CreatedDate":"02/03/2019, 16:15:00",
+                        "ModifiedDate": "01/12/2019, 20:11:20"
+                        
+                    },
+                    {
+                        "Id":20,
+                        "Title":"Gjaldþrota fyrirtæki",
+                        "ImgSource":"Img20",
+                        "ShortDescription":"Snapchat er gjaldþrota",
+                        "LongDescrtiption": "Appið snapchat hefur hætt þar sem að fyrirtækið fór á hausinn",
+                        "PublishedDate":"01/11/2019, 15:20:00",
+                        "ModifiedBy":"Anna Hulda Grétarsdóttir",
+                        "CreatedDate":"02/03/2019, 16:15:00",
+                        "ModifiedDate": "01/12/2019, 20:11:20"
+                        
+                    },
+                     {
+                       "Id":21,
+                       "Title":"Uppselt á októberfest",
+                       "ImgSource":"Img21",
+                       "ShortDescription":"Allir miðar seldir",
+                       "LongDescrtiption": "Ekki er hægt að kaupa fleiri miða á skemmtunina Októberfest",
+                       "PublishedDate":"01/11/2019, 15:20:00",
+                       "ModifiedBy":"Anna Hulda Grétarsdóttir",
+                       "CreatedDate":"02/03/2019, 16:15:00",
+                       "ModifiedDate": "01/12/2019, 20:11:20"
+                            
+                     },
+                    {
+                        "Id":22,
+                        "Title":"Ætlar að banna bragðtegundir í rafrettur",
+                        "ImgSource":"Img22",
+                        "ShortDescription":"Donald trump vill banna bragðtegundir í rafrettur",
+                        "LongDescrtiption": "Donald trump segir að bragðtegundir séu fyrir aumingja og ætlar því að banna þær í rafrettur",
+                        "PublishedDate":"01/11/2018, 11:20:00",
+                        "ModifiedBy":"María Ólafsdóttir",
+                        "CreatedDate":"02/03/2018, 11:15:00",
+                        "ModifiedDate": "01/12/2018, 13:11:20"
+                            
+                    },
+                    {
+                         "Id":23,
+                         "Title":"Herra Hnetusmjör á B5",
+                          "ImgSource":"Img23",
+                         "ShortDescription":"Sást til hans seinstu helgi á B5",
+                         "LongDescrtiption": "Herra Hnetusmjör var með vinum sínum á djamminu á B5 seinasta laugardag",
+                         "PublishedDate":"01/11/2018, 11:20:00",
+                         "ModifiedBy":"María Ólafsdóttir",                    
+                         "CreatedDate":"02/03/2018, 11:15:00",
+                         "ModifiedDate": "01/12/2018, 13:11:20"
+                                        
+                    },
+                
+                    {
+                          "Id":24,
+                          "Title":"Ný verslunargata í Reykjavík",
+                          "ImgSource":"Img24",
+                          "ShortDescription":"Í miðbæ Reykjavíkur hefur opnað ný verlsunargata",
+                          "LongDescrtiption": "Í nýju verlslunargötunni er að finna búðir eins og H&M og Zara",
+                          "PublishedDate":"01/11/2018, 11:20:00",
+                          "ModifiedBy":"Elsa Þorsteinsdóttir",
+                          "CreatedDate":"02/03/2018, 11:15:00",
+                          "ModifiedDate": "01/12/2018, 13:11:20"
+                                        
+                    },
+                    {
+                         "Id":25,
+                         "Title":"Íslands og bikarmeistarar mætast",
+                         "ImgSource":"Img25",
+                         "ShortDescription":"Valur og HK mætast á sunnudag",
+                         "LongDescrtiption": "Leikurinn hjá Íslandsmeisturunum og bikarmeisturunum Vali og HK verður næsta sunnudag",
+                         "PublishedDate":"01/10/2018, 12:20:00",
+                         "ModifiedBy":"Auður Auðunsdóttir",
+                         "CreatedDate":"04/03/2018, 12:15:00",
+                         "ModifiedDate": "02/12/2018, 12:11:20"
+                                       
+                   }
+            ]
