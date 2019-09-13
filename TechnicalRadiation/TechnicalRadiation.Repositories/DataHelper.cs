@@ -16,9 +16,5 @@ namespace TechnicalRadiation.Common
                 d = JsonConvert.DeserializeObject<List<T>>(json);
             }
         }
-
-        public static int GetHighestId<T>(){
-            return 0;
-        }
     }
 }

@@ -41,7 +41,7 @@ namespace TechnicalRadiation.Controllers
         // POST api/
         [HttpPost("")]
         [Authorization]
-        public IActionResult CreateNewCustomer([FromBody] NewsItemInputModel news)
+        public IActionResult CreateNewsItem([FromBody] NewsItemInputModel news)
         {
             if (!ModelState.IsValid) { return StatusCode(412, news); }
 

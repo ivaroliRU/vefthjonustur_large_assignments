@@ -41,5 +41,17 @@ namespace TechnicalRadiation.Controllers
         {
             return Ok(_newsService.GetNewsByAuthor(authorId));
         }
+
+        // POST api/authors/
+        [HttpPost("")]
+        [Authorization]
+        public IActionResult CreateNewAuthor([FromBody] AuthorInputModel author)
+        {
+            if (!ModelState.IsValid) { return StatusCode(412, author); }
+
+            var id = _authorsService.CreateAuthor(author);
+
+            return Ok();//CreatedAtRoute("GetNewsItemsById", new { id }, null);
+        }
     }
 }
