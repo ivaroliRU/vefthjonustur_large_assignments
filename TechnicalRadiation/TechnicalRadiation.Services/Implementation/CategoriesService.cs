@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using TechnicalRadiation.Services.Interfaces;
 using TechnicalRadiation.Repositories.Interfaces;
 using TechnicalRadiation.Models;
+using TechnicalRadiation.Models.InputModels;
 using TechnicalRadiation.Models.DtoModels;
 using TechnicalRadiation.Models.HyperMedia;
 using TechnicalRadiation.Common;
@@ -40,7 +41,24 @@ namespace TechnicalRadiation.Services.Implementation
             return item;
         }
 
-        
+        public int CreateNewCategory(CategoryInputModel category)
+        {
+            return _categoryRepository.CreateNewCategory(category);
+        }
+
+        public int UpdateCategoryById(CategoryInputModel category, int id)
+        {
+            return _categoryRepository.UpdateCategoryById(category, id);
+        }
+
+        public int DeleteCategoryById(int id)
+        {
+            return _categoryRepository.DeleteCategoryById(id);
+        }
+
+
+
+
 
        
         

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TechnicalRadiation.Models;
+using TechnicalRadiation.Models.InputModels;
 using TechnicalRadiation.Models.EntityModels;
 using TechnicalRadiation.Models.DtoModels;
 using TechnicalRadiation.Repositories.Data;
@@ -58,5 +59,29 @@ namespace TechnicalRadiation.Repositories.Implementation
 
             return item;
         }
+
+        public int CreateNewCategory(CategoryInputModel item)
+        {
+            int id = _dbContext.NewsItemCategories.Count();
+
+            _dbContext.NewsItemCategories.Add(new NewsItemCategories {
+                CategoryId = id
+            });
+            return id;
+        }
+
+        //int UpdateCategoryById(CategoryInputModel category, int id);
+        public int UpdateCategoryById(CategoryInputModel item, int categoryId){
+            _dbContext.NewsItems[categoryId] = new NewsItemCategories(){
+                
+            };
+            return categoryId;
+        }
+
+
+
+        //int DeleteCategoryById(int id);
+
+        
     }
 }
