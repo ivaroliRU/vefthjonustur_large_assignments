@@ -4,7 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TechnicalRadiation.Models;
+using TechnicalRadiation.Models.InputModels;
 using TechnicalRadiation.Services.Interfaces;
+using System.Net.Http.Headers;
+using TechnicalRadiation.WebApi.Attributes;
 
 namespace TechnicalRadiation.Controllers
 {
@@ -24,6 +27,19 @@ namespace TechnicalRadiation.Controllers
         {
             return Ok(_categoriesService.GetAllCategories());
         }
+        
+        // POST api/categories/
+        [HttpPost("")]
+        [Authorization]
+        public ActionResult CreateNewCategory([FromBody] CategoryInputModel category)
+        {
+            if (!ModelState.IsValid) {
+                return StatusCode(412, category);
+            }
+            var id = _categoriesService.CreateNewCategory(category);
+
+            return CreatedAtRoute("GetCategoryById", new {id}, null);
+        }
 
         // GET api/categories/{categoryId}
         [HttpGet("{categoryId:int}")]
@@ -31,5 +47,29 @@ namespace TechnicalRadiation.Controllers
         {
             return Ok(_categoriesService.GetAllCategories());
         }
+        // PUT api/categories/id
+        [HttpPut("{categoryId:int}")]
+        [Authorization]
+
+        public ActionResult UpdateCategoryById([FromBody] CategoryInputModel category, int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Model is not properly formatted");
+            }
+            _categoriesService.UpdateCategoryById(category, id);
+            return NoContent();
+        }
+        // DELETE api/categories/id
+        [HttpDelete("{categoryId:int")]
+        [Authorization]
+
+        public ActionResult DeleteCategoryById(int id)
+        {
+            _categoriesService.DeleteCategoryById(id);
+            return NoContent();
+        }
+
+
     }
 }
