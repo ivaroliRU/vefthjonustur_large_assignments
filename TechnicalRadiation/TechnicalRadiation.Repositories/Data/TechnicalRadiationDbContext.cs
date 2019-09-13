@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using TechnicalRadiation.Models.EntityModels;
+using TechnicalRadiation.Common;
 using Newtonsoft.Json;
 
 namespace TechnicalRadiation.Repositories.Data
@@ -10,23 +11,26 @@ namespace TechnicalRadiation.Repositories.Data
     {
         private string dataLocation = "../TechnicalRadiation.Repositories/Data/";
 
-        public static List<NewsItemAuthors> newItemAuthors;
+        public static List<NewsItemAuthors> newItemAuthorsList;
+        public static List<NewsItemCategories> NewsItemCategoriesList;
+        public static List<NewsItem> NewsItemsList;
+        public static List<Author> AuthorList;
+        public static List<Category> CategoryList;
 
         public TechnicalRadiationDbContext()
         {
-
+            DataHelper.DataToList(newItemAuthorsList, dataLocation+"news_author.json");
+            DataHelper.DataToList(NewsItemCategoriesList, dataLocation+"news_category.json");
+            DataHelper.DataToList(NewsItemsList, dataLocation+"news.json");
+            DataHelper.DataToList(AuthorList, dataLocation+"author.json");
+            DataHelper.DataToList(CategoryList, dataLocation+"category.json");
         }
 
         public IEnumerable<NewsItemAuthors> NewsItemAuthor
         {
             get 
             {
-                using (StreamReader r = new StreamReader(dataLocation+"news_author.json"))
-                {
-                    string json = r.ReadToEnd();
-                    NewsItemAuthors[] items = JsonConvert.DeserializeObject<NewsItemAuthors[]>(json);
-                    return items;
-                }
+                return newItemAuthorsList;
             }
         }
 
@@ -34,12 +38,7 @@ namespace TechnicalRadiation.Repositories.Data
         {
             get 
             {
-                using (StreamReader r = new StreamReader(dataLocation+"news_category.json"))
-                {
-                    string json = r.ReadToEnd();
-                    NewsItemCategories[] items = JsonConvert.DeserializeObject<NewsItemCategories[]>(json);
-                    return items;
-                }
+                return NewsItemCategoriesList;
             }
         }
 
@@ -47,12 +46,7 @@ namespace TechnicalRadiation.Repositories.Data
         {
             get 
             {
-                using (StreamReader r = new StreamReader(dataLocation+"news.json"))
-                {
-                    string json = r.ReadToEnd();
-                    NewsItem[] items = JsonConvert.DeserializeObject<NewsItem[]>(json);
-                    return items;
-                }
+                return NewsItemsList;
             }
         }
 
@@ -60,24 +54,14 @@ namespace TechnicalRadiation.Repositories.Data
         {
             get 
             {
-                using (StreamReader r = new StreamReader(dataLocation+"author.json"))
-                {
-                    string json = r.ReadToEnd();
-                    List<Author> items = JsonConvert.DeserializeObject<List<Author>>(json);
-                    return items;
-                }
+                return AuthorList;
             }
         }
         public IEnumerable<Category> Category
         {
             get 
             {
-                using (StreamReader r = new StreamReader(dataLocation+"category.json"))
-                {
-                    string json = r.ReadToEnd();
-                    List<Category> items = JsonConvert.DeserializeObject<List<Category>>(json);
-                    return items;
-                }
+                return CategoryList;
             }
         }
 
