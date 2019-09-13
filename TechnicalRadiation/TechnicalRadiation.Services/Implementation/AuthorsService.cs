@@ -34,7 +34,7 @@ namespace TechnicalRadiation.Services.Implementation
             return items;
         }
 
-        public AuthorDto GetAuthorById(int Id)
+        public AuthorDetailDto GetAuthorById(int Id)
         {
             var item = _authorsRepository.GetAuthorById(Id);
 

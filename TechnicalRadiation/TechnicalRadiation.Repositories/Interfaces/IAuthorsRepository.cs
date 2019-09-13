@@ -10,7 +10,7 @@ namespace TechnicalRadiation.Repositories.Interfaces
     public interface IAuthorsRepository
     {
         IEnumerable<AuthorDto> GetAllAuthors();
-        AuthorDto GetAuthorById(int authorId);
+        AuthorDetailDto GetAuthorById(int authorId);
         IEnumerable<AuthorDto> GetAuthersOfNews(int newsId);
         int CreateAuthor(AuthorInputModel author);
         int UpdateAuthorById(int authorId, AuthorInputModel author);

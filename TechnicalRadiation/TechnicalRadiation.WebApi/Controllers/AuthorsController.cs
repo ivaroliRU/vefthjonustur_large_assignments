@@ -32,14 +32,14 @@ namespace TechnicalRadiation.Controllers
 
         // GET api/authors/{authorId}
         [HttpGet("{authorId:int}")]
-        public ActionResult<IEnumerable<string>> GetAuthorById(int authorId)
+        public ActionResult<AuthorDetailDto> GetAuthorById(int authorId)
         {
             return Ok(_authorsService.GetAuthorById(authorId));
         }
 
         // GET api/authors/{authorId}/newsItems
         [HttpGet("{authorId:int}/newsItems")]
-        public ActionResult<IEnumerable<string>> GetNewsByAuthorById(int authorId)
+        public ActionResult<IEnumerable<NewsItemDto>> GetNewsByAuthorById(int authorId)
         {
             return Ok(_newsService.GetNewsByAuthor(authorId));
         }

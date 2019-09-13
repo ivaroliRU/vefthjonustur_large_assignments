@@ -31,13 +31,15 @@ namespace TechnicalRadiation.Repositories.Implementation
             return items;
         }
 
-        public AuthorDto GetAuthorById(int authorId){
+        public AuthorDetailDto GetAuthorById(int authorId){
             var item = (from c in _dbContext.Author
                         where c.Id == authorId
-                        select new AuthorDto()
+                        select new AuthorDetailDto()
                         {
                             Id = c.Id,
-                            Name = c.Name
+                            Name = c.Name,
+                            Bio = c.Bio,
+                            ProfileImgSource = c.ProfileImgSource
                         }).FirstOrDefault();
 
             return item;

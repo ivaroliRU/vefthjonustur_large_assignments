@@ -11,7 +11,7 @@ namespace TechnicalRadiation.Services.Interfaces
     public interface IAuthorsService
     {
         IEnumerable<AuthorDto> GetAllAuthors();
-        AuthorDto GetAuthorById(int id);
+        AuthorDetailDto GetAuthorById(int id);
         int CreateAuthor(AuthorInputModel item);
         int UpdateAuthorById(int newsId, AuthorInputModel item);
         int DeleteAuthorById(int newsId);

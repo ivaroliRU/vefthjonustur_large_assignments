@@ -45,7 +45,7 @@ namespace TechnicalRadiation.Controllers
         [HttpGet("{categoryId:int}")]
         public ActionResult<IEnumerable<string>> GetCategoryById(int categoryId)
         {
-            return Ok(_categoriesService.GetAllCategories());
+            return Ok(_categoriesService.GetCategoryById(categoryId));
         }
 
         // PUT api/categories/id

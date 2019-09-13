@@ -33,6 +33,14 @@ namespace TechnicalRadiation.Common
             i.Links.AddListReference("newsItemsDetailed", _newsRepository.GetNewsByAuthor(i.Id).Select(a => new { href = $"/api/authors/{a.Id}" }));
         }
 
+        public static void AddAuthorLinks(this AuthorDetailDto i, INewsRepository _newsRepository){
+            i.Links.AddReference("self", $"/api/authors/{i.Id}");
+            i.Links.AddReference("edit", $"/api/authors/{i.Id}");
+            i.Links.AddReference("delete", $"/api/authors/{i.Id}");
+            i.Links.AddReference("newsItems", $"/api/authors/{i.Id}/newsItems");
+            i.Links.AddListReference("newsItemsDetailed", _newsRepository.GetNewsByAuthor(i.Id).Select(a => new { href = $"/api/authors/{a.Id}" }));
+        }
+
         public static void AddCategoryLinks(this CategoryDetailDto i){
             i.Links.AddReference("self", $"/api/categories/{i.Id}");
             i.Links.AddReference("edit", $"/api/categories/{i.Id}");
