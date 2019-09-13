@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TechnicalRadiation.Models;
 using TechnicalRadiation.Models.InputModels;
 using TechnicalRadiation.Models.EntityModels;
 using TechnicalRadiation.Models.DtoModels;
 using TechnicalRadiation.Repositories.Data;
 using TechnicalRadiation.Repositories.Interfaces;
+using TechnicalRadiation.Common;
 
 namespace TechnicalRadiation.Repositories.Implementation
 {
@@ -66,7 +66,8 @@ namespace TechnicalRadiation.Repositories.Implementation
 
             _dbContext.Category.Add(new Category {
                 Id = id,
-                Name = item.Name
+                Name = item.Name,
+                Slug = DataHelper.CreateSlug(item.Name)
             });
 
             return id;

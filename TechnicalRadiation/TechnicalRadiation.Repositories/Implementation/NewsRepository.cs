@@ -99,5 +99,19 @@ namespace TechnicalRadiation.Repositories.Implementation
             _dbContext.NewsItems.Remove(i);
             return newsId;
         }
+
+        public void CreateCategoryNewsConnection(int categoryId, int newsId){
+            _dbContext.NewsItemCategories.Add(new NewsItemCategories(){
+                CategoryId = categoryId,
+                NewsItemId = newsId
+            });
+        }
+
+        public void CreateAuthorNewsConnection(int authorId, int newsId){
+            _dbContext.NewsItemAuthor.Add(new NewsItemAuthors(){
+                AuthorId = authorId,
+                NewsItemId = newsId
+            });
+        }
     }
 }

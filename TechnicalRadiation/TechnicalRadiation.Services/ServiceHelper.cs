@@ -38,11 +38,5 @@ namespace TechnicalRadiation.Common
             i.Links.AddReference("edit", $"/api/categories/{i.Id}");
             i.Links.AddReference("delete", $"/api/categories/{i.Id}");
         }
-
-        public static string CreateSlug(String str){
-            String slug = str.ToLower();
-            slug.Replace(' ', '-');
-            return slug;
-        }
     }
 }

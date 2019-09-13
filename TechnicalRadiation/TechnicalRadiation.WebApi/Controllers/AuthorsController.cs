@@ -77,5 +77,13 @@ namespace TechnicalRadiation.Controllers
             _authorsService.DeleteAuthorById(authorId);
             return NoContent();
         }
+
+        [HttpPut("/{autorId}/newsItems/{newsItemId}")]
+        [Authorization]
+        public ActionResult CreateAuthorNewsConnection(int authorId, int newsItemId)
+        {
+            _authorsService.CreateAuthorNewsConnection(authorId, newsItemId);
+            return NoContent();
+        }
     }
 }

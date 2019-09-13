@@ -15,5 +15,6 @@ namespace TechnicalRadiation.Services.Interfaces
         int CreateAuthor(AuthorInputModel item);
         int UpdateAuthorById(int newsId, AuthorInputModel item);
         int DeleteAuthorById(int newsId);
+        void CreateAuthorNewsConnection(int authorId, int newsId);
     }
 }

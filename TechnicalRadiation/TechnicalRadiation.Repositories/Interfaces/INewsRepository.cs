@@ -15,5 +15,7 @@ namespace TechnicalRadiation.Repositories.Interfaces
         int CreateNewsItem(NewsItemInputModel item);
         int UpdateNewsItemById(int newsId, NewsItemInputModel item);
         int DeleteNewsItemById(int newsId);
+        void CreateCategoryNewsConnection(int categoryId, int newsId);
+        void CreateAuthorNewsConnection(int authorId, int newsId);
     }
 }

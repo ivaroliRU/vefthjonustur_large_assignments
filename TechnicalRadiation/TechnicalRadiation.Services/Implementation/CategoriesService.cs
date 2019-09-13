@@ -56,11 +56,8 @@ namespace TechnicalRadiation.Services.Implementation
             return _categoryRepository.DeleteCategoryById(id);
         }
 
-
-
-
-
-       
-        
+        public void CreateCategoryNewsConnection(int categoryId, int newsId){
+            _newsRepository.CreateCategoryNewsConnection(categoryId, newsId);
+        }
     }
 }

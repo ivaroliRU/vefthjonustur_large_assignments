@@ -11,6 +11,7 @@ namespace TechnicalRadiation.Services.Interfaces
     public interface ICategoriesService
     {
         IEnumerable<CategoryDetailDto> GetAllCategories();
+        
         CategoryDetailDto GetCategoryById(int Id);
 
         int CreateNewCategory(CategoryInputModel category);
@@ -18,5 +19,7 @@ namespace TechnicalRadiation.Services.Interfaces
         int UpdateCategoryById(CategoryInputModel category, int id);
 
         int DeleteCategoryById(int id);
+
+        void CreateCategoryNewsConnection(int categoryId, int newsId);
     }
 }

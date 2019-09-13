@@ -69,5 +69,13 @@ namespace TechnicalRadiation.Controllers
             _categoriesService.DeleteCategoryById(id);
             return NoContent();
         }
+
+        [HttpPut("/{categoryId}/newsItems/{newsItemId}")]
+        [Authorization]
+        public ActionResult CreateCategoryNewsConnection(int categoryId, int newsItemId)
+        {
+            _categoriesService.CreateCategoryNewsConnection(categoryId, newsItemId);
+            return NoContent();
+        }
     }
 }

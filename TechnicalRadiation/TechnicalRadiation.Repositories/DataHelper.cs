@@ -16,5 +16,11 @@ namespace TechnicalRadiation.Common
                 d = JsonConvert.DeserializeObject<List<T>>(json);
             }
         }
+
+        public static string CreateSlug(String str){
+            String slug = str.ToLower();
+            slug.Replace(' ', '-');
+            return slug;
+        }
     }
 }

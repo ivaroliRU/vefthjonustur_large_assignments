@@ -48,11 +48,15 @@ namespace TechnicalRadiation.Services.Implementation
         }
         
         public int UpdateAuthorById(int newsId, AuthorInputModel item){
-            return 0;
+            return _authorsRepository.UpdateAuthorById(newsId, item);
         }
         
         public int DeleteAuthorById(int newsId){
-            return 0;
+            return _authorsRepository.DeleteAuthorById(newsId);
+        }
+
+        public void CreateAuthorNewsConnection(int authorId, int newsId){
+            _newsRepository.CreateAuthorNewsConnection(authorId, newsId);
         }
     }
 }
