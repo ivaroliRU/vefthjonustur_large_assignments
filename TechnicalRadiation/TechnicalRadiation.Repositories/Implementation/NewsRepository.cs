@@ -64,7 +64,7 @@ namespace TechnicalRadiation.Repositories.Implementation
         }
 
         public int CreateNewsItem(NewsItemInputModel item){
-            int id = _dbContext.NewsItems.Count();
+            int id = _dbContext.NewsItems.OrderByDescending(x => x.Id).First().Id++;
 
             _dbContext.NewsItems.Add(new NewsItem(){
                 Id = id,
@@ -78,14 +78,16 @@ namespace TechnicalRadiation.Repositories.Implementation
             return id;
         }
 
-        public int UpdateNewsItemById(int newsId, NewsItemInputModel item){
-            _dbContext.NewsItems[newsId] = new NewsItem(){
-                Title = item.Title,
-                ImgSource = item.ImgSource,
-                ShortDescription = item.ShortDescription,
-                LongDescription = item.LongDescription,
-                PublishedDate = item.PublishDate
-            };
+        public int UpdateNewsItemById(int newsId, NewsItemInputModel news){
+            var item = _dbContext.NewsItems.FirstOrDefault(x => x.Id == newsId);
+            if (item != null) 
+            {
+                item.Title = news.Title;
+                item.ImgSource = news.ImgSource;
+                item.ShortDescription = news.ShortDescription;
+                item.LongDescription = news.LongDescription;
+                item.PublishedDate = news.PublishDate;
+            }
 
             return newsId;
         }
