@@ -10,6 +10,13 @@ namespace TechnicalRadiation.Repositories.Data
     {
         private string dataLocation = "../TechnicalRadiation.Repositories/Data/";
 
+        public static List<NewsItemAuthors> newItemAuthors;
+
+        public TechnicalRadiationDbContext()
+        {
+
+        }
+
         public IEnumerable<NewsItemAuthors> NewsItemAuthor
         {
             get 
