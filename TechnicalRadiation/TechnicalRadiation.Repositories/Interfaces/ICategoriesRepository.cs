@@ -12,11 +12,8 @@ namespace TechnicalRadiation.Repositories.Interfaces
         IEnumerable<CategoryDetailDto> GetAllCategories();
         CategoryDetailDto GetCategoryById(int categoryId);
         IEnumerable<CategoryDetailDto> GetCategoriesOfNews(int newsId);
-
         int CreateNewCategory(CategoryInputModel category);
-
         int UpdateCategoryById(CategoryInputModel category, int id);
-
         int DeleteCategoryById(int id);
     }
 }

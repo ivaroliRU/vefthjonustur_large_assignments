@@ -8,6 +8,7 @@ using TechnicalRadiation.Models;
 using TechnicalRadiation.Models.HyperMedia;
 using TechnicalRadiation.Models.DtoModels;
 using TechnicalRadiation.Models.InputModels;
+using TechnicalRadiation.Common;
 
 namespace TechnicalRadiation.Services.Implementation
 {
@@ -27,7 +28,7 @@ namespace TechnicalRadiation.Services.Implementation
             var items = _authorsRepository.GetAllAuthors().ToList();
 
             items.ForEach(i => {
-                LinksHelper.AddAuthorLinks(i);
+                LinksHelper.AddAuthorLinks(i, _newsRepository);
             });
 
             return items;
@@ -37,15 +38,13 @@ namespace TechnicalRadiation.Services.Implementation
         {
             var item = _authorsRepository.GetAuthorById(Id);
 
-            LinksHelper.AddAuthorLinks(item);
+            LinksHelper.AddAuthorLinks(item, _newsRepository);
 
             return item;
         }
 
         public int CreateAuthor(AuthorInputModel item){
-            int id = _dbContext.Authors.OrderByDescending(x => x.Id).First().Id++;
-
-            return id;
+            return _authorsRepository.CreateAuthor(item);
         }
         
         public int UpdateAuthorById(int newsId, AuthorInputModel item){

@@ -47,10 +47,10 @@ namespace TechnicalRadiation.Controllers
         {
             return Ok(_categoriesService.GetAllCategories());
         }
+        
         // PUT api/categories/id
         [HttpPut("{categoryId:int}")]
         [Authorization]
-
         public ActionResult UpdateCategoryById([FromBody] CategoryInputModel category, int id)
         {
             if (!ModelState.IsValid)
@@ -60,16 +60,14 @@ namespace TechnicalRadiation.Controllers
             _categoriesService.UpdateCategoryById(category, id);
             return NoContent();
         }
+
         // DELETE api/categories/id
         [HttpDelete("{categoryId:int")]
         [Authorization]
-
         public ActionResult DeleteCategoryById(int id)
         {
             _categoriesService.DeleteCategoryById(id);
             return NoContent();
         }
-
-
     }
 }

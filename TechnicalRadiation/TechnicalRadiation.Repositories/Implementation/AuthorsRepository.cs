@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TechnicalRadiation.Models.InputModels;
 using TechnicalRadiation.Models.DtoModels;
+using TechnicalRadiation.Models.EntityModels;
 using TechnicalRadiation.Repositories.Data;
 using TechnicalRadiation.Repositories.Interfaces;
 
@@ -52,6 +54,38 @@ namespace TechnicalRadiation.Repositories.Implementation
                         }).ToList();
 
             return item;
+        }
+
+        public int CreateAuthor(AuthorInputModel author){
+            int id = _dbContext.Author.OrderByDescending(x => x.Id).First().Id++;
+
+            _dbContext.Author.Add(new Author(){
+                Name = author.Name,
+                ProfileImgSource = author.ProfileImgSource,
+                Bio = author.Bio,
+                CreatedDate = DateTime.Now
+            });
+
+            return id;
+        }
+
+        public int UpdateAuthorById(int authorId, AuthorInputModel author){
+            var item = _dbContext.Author.FirstOrDefault(x => x.Id == authorId);
+            if (item != null) 
+            {
+                item.Name = author.Name;
+                item.ProfileImgSource = author.ProfileImgSource;
+                item.Bio = author.Bio;
+                item.ModifiedDate = DateTime.Now;
+            }
+
+            return authorId;
+        }
+
+        public int DeleteAuthorById(int authorId){
+            var i = _dbContext.Author.Where(item => item.Id == authorId).Single();
+            _dbContext.Author.Remove(i);
+            return authorId;
         }
     }
 }

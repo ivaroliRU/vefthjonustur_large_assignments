@@ -72,7 +72,8 @@ namespace TechnicalRadiation.Repositories.Implementation
                 ImgSource = item.ImgSource,
                 ShortDescription = item.ShortDescription,
                 LongDescription = item.LongDescription,
-                PublishedDate = item.PublishDate
+                PublishedDate = item.PublishDate,
+                CreatedDate = DateTime.Now
             });
 
             return id;
@@ -87,13 +88,15 @@ namespace TechnicalRadiation.Repositories.Implementation
                 item.ShortDescription = news.ShortDescription;
                 item.LongDescription = news.LongDescription;
                 item.PublishedDate = news.PublishDate;
+                item.ModifiedDate = DateTime.Now;
             }
 
             return newsId;
         }
 
         public int DeleteNewsItemById(int newsId){
-            _dbContext.NewsItems.RemoveAt(newsId);
+            var i = _dbContext.NewsItems.Where(item => item.Id == newsId).Single();
+            _dbContext.NewsItems.Remove(i);
             return newsId;
         }
     }

@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TechnicalRadiation.Models.DtoModels;
+using TechnicalRadiation.Models.InputModels;
 using TechnicalRadiation.Services.Interfaces;
+using TechnicalRadiation.WebApi.Attributes;
 
 namespace TechnicalRadiation.Controllers
 {
@@ -52,6 +54,28 @@ namespace TechnicalRadiation.Controllers
             var id = _authorsService.CreateAuthor(author);
 
             return Ok();//CreatedAtRoute("GetNewsItemsById", new { id }, null);
+        }
+
+        // PUT api/authors/id
+        [HttpPut("{authorId:int}")]
+        [Authorization]
+        public ActionResult UpdateAuthorById([FromBody] AuthorInputModel category, int authorId)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Model is not properly formatted");
+            }
+            _authorsService.UpdateAuthorById(authorId, category);
+            return NoContent();
+        }
+
+        // DELETE api/authors/id
+        [HttpDelete("{authorId:int")]
+        [Authorization]
+        public ActionResult DeleteAuthorById(int authorId)
+        {
+            _authorsService.DeleteAuthorById(authorId);
+            return NoContent();
         }
     }
 }
