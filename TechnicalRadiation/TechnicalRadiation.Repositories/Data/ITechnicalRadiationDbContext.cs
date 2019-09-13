@@ -10,5 +10,7 @@ namespace TechnicalRadiation.Repositories.Data
         IEnumerable<NewsItem> NewsItems{get;}
         IEnumerable<Category> Category{get;}
         IEnumerable<Author> Author{get;}
+        IEnumerable<NewsItemCategories> NewsItemCategories{get;}
+        IEnumerable<NewsItemAuthors> NewsItemAuthor{get;}
     }
 }

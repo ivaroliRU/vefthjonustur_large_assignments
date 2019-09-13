@@ -10,7 +10,7 @@ namespace TechnicalRadiation.Services.Interfaces
     public interface ICategoriesService
     {
         IEnumerable<CategoryDetailDto> GetAllCategories();
-        IEnumerable<CategoryDetailDto> GetCategoryById(int id);
+        CategoryDetailDto GetCategoryById(int Id);
         
     }
 }

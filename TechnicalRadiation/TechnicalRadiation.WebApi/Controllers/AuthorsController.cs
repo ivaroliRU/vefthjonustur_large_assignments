@@ -13,10 +13,12 @@ namespace TechnicalRadiation.Controllers
     public class AuthorsController : ControllerBase
     {
         private readonly IAuthorsService _authorsService;
+        private readonly INewsService _newsService;
 
-        public AuthorsController(IAuthorsService authorsService)
+        public AuthorsController(IAuthorsService authorsService, INewsService newsService)
         {
             _authorsService = authorsService;
+            _newsService = newsService;
         }
 
         // GET api/authors/
@@ -33,11 +35,11 @@ namespace TechnicalRadiation.Controllers
             return Ok(_authorsService.GetAuthorById(authorId));
         }
 
-        // GET api/authors/{}/newsItems
+        // GET api/authors/{authorId}/newsItems
         [HttpGet("{authorId:int}/newsItems")]
         public ActionResult<IEnumerable<string>> GetNewsByAuthorById(int authorId)
         {
-            return new string[] { "Frettir" };
+            return Ok(_newsService.GetNewsByAuthor(authorId));
         }
     }
 }

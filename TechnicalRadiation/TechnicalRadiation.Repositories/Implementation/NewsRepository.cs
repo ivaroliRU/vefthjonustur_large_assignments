@@ -32,7 +32,18 @@ namespace TechnicalRadiation.Repositories.Implementation
         }
 
         public IEnumerable<NewsItemDto> GetNewsByAuthor(int authorId){
-            return null;
+            var item = (from c in _dbContext.NewsItems
+                        join n in _dbContext.NewsItemAuthor on c.Id equals n.NewsItemId
+                        where n.AuthorId == authorId
+                        select new NewsItemDto()
+                        {
+                            Id = c.Id,
+                            Title = c.Title,
+                            ImgSource = c.ImgSource,
+                            ShortDescription = c.ShortDescription
+                        }).ToList();
+
+            return item;
         }
 
         public NewsItemDetailDto GetNewsItemsById(int newsId){

@@ -10,5 +10,6 @@ namespace TechnicalRadiation.Repositories.Interfaces
     {
         IEnumerable<AuthorDto> GetAllAuthors();
         AuthorDto GetAuthorById(int authorId);
+        IEnumerable<AuthorDto> GetAuthersOfNews(int newsId);
     }
 }

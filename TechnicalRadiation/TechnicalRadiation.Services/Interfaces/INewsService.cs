@@ -11,5 +11,6 @@ namespace TechnicalRadiation.Services.Interfaces
     {
         Envelope<NewsItemDto> GetAllNewsItems(int pageSize, int pageNumber);
         NewsItemDetailDto GetNewsItemsById(int newsId);
+        IEnumerable<NewsItemDto> GetNewsByAuthor(int authorId);
     }
 }

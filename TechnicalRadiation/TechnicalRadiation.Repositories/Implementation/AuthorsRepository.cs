@@ -40,5 +40,18 @@ namespace TechnicalRadiation.Repositories.Implementation
 
             return item;
         }
+
+        public IEnumerable<AuthorDto> GetAuthersOfNews(int newsId){
+            var item = (from c in _dbContext.Author
+                        join n in _dbContext.NewsItemAuthor on c.Id equals n.AuthorId
+                        where n.NewsItemId == newsId
+                        select new AuthorDto()
+                        {
+                            Id = c.Id,
+                            Name = c.Name
+                        }).ToList();
+
+            return item;
+        }
     }
 }

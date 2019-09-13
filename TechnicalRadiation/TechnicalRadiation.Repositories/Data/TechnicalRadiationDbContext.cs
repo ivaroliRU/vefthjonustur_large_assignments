@@ -10,6 +10,32 @@ namespace TechnicalRadiation.Repositories.Data
     {
         private string dataLocation = "../TechnicalRadiation.Repositories/Data/";
 
+        public IEnumerable<NewsItemAuthors> NewsItemAuthor
+        {
+            get 
+            {
+                using (StreamReader r = new StreamReader(dataLocation+"news_author.json"))
+                {
+                    string json = r.ReadToEnd();
+                    NewsItemAuthors[] items = JsonConvert.DeserializeObject<NewsItemAuthors[]>(json);
+                    return items;
+                }
+            }
+        }
+
+        public IEnumerable<NewsItemCategories> NewsItemCategories
+        {
+            get 
+            {
+                using (StreamReader r = new StreamReader(dataLocation+"news_category.json"))
+                {
+                    string json = r.ReadToEnd();
+                    NewsItemCategories[] items = JsonConvert.DeserializeObject<NewsItemCategories[]>(json);
+                    return items;
+                }
+            }
+        }
+
         public IEnumerable<NewsItem> NewsItems
         {
             get 

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using TechnicalRadiation.Services.Interfaces;
 using TechnicalRadiation.Repositories.Interfaces;
-using TechnicalRadiation.Common;
 using TechnicalRadiation.Models;
 using TechnicalRadiation.Models.DtoModels;
 using TechnicalRadiation.Models.HyperMedia;
+using TechnicalRadiation.Common;
 
 namespace TechnicalRadiation.Services.Implementation
 {
@@ -28,16 +28,16 @@ namespace TechnicalRadiation.Services.Implementation
             var items = _categoryRepository.GetAllCategories().ToList();
 
             items.ForEach(i => {
-                i.Links.AddReference("self", $"/api/categories/{i.Id}");
-                i.Links.AddReference("edit", $"/api/categories/{i.Id}");
-                i.Links.AddReference("delete", $"/api/categories/{i.Id}");
+                LinksHelper.AddCategoryLinks(i);
             });
             return items;
         }
 
-        public IEnumerable<CategoryDetailDto> GetCategoryById(int Id)
+        public CategoryDetailDto GetCategoryById(int Id)
         {
-            return new CategoryDetailDto[] {};
+            var item = _categoryRepository.GetCategoryById(Id);
+            LinksHelper.AddCategoryLinks(item);
+            return item;
         }
        
         

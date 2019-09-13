@@ -44,5 +44,19 @@ namespace TechnicalRadiation.Repositories.Implementation
 
             return item;
         }
+
+        public IEnumerable<CategoryDetailDto> GetCategoriesOfNews(int newsId){
+            var item = (from c in _dbContext.Category
+                        join n in _dbContext.NewsItemCategories on c.Id equals n.CategoryId
+                        where n.NewsItemId == newsId
+                        select new CategoryDetailDto()
+                        {
+                            Id = c.Id,
+                            Name = c.Name,
+                            Slug = c.Slug
+                        }).ToList();
+
+            return item;
+        }
     }
 }

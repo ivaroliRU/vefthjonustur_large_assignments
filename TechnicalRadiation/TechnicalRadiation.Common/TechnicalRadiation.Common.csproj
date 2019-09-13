@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TechnicalRadiation.Models\TechnicalRadiation.Models.csproj" />
+    <ProjectReference Include="..\TechnicalRadiation.Repositories\TechnicalRadiation.Repositories.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

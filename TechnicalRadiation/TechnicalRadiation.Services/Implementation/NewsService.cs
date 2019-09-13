@@ -4,10 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using TechnicalRadiation.Services.Interfaces;
 using TechnicalRadiation.Repositories.Interfaces;
-using TechnicalRadiation.Common;
 using TechnicalRadiation.Models;
 using TechnicalRadiation.Models.HyperMedia;
 using TechnicalRadiation.Models.DtoModels;
+using TechnicalRadiation.Common;
 
 namespace TechnicalRadiation.Services.Implementation
 {
@@ -27,11 +27,7 @@ namespace TechnicalRadiation.Services.Implementation
             var items = _newsRepository.GetAllNewsItems().ToList();
 
             items.ForEach(i => {
-                i.Links.AddReference("self", $"/api/{i.Id}");
-                i.Links.AddReference("edit", $"/api/{i.Id}");
-                i.Links.AddReference("delete", $"/api/{i.Id}");
-                //i.Links.AddListReference("authors", _authorsRepository.GetAuthersById(i.Id).Select(a => new { href = $"/api/authors/{a.Id}" }));
-                //i.Links.AddListReference("categories", _categoriesRepository.GetCategoriesById(i.Id).Select(c => new { href = $"/api/categories/{c.Id}" }));
+                LinksHelper.AddNewsItemLinks(i, _authorsRepository, _categoriesRepository);
             });
 
             return new Envelope<NewsItemDto>(pageNumber, pageSize, items);
@@ -39,7 +35,18 @@ namespace TechnicalRadiation.Services.Implementation
 
         public NewsItemDetailDto GetNewsItemsById(int newsId){
             var item = _newsRepository.GetNewsItemsById(newsId);
+            LinksHelper.AddNewsItemLinks(item, _authorsRepository, _categoriesRepository);
             return item;
+        }
+
+        public IEnumerable<NewsItemDto> GetNewsByAuthor(int authorId){
+            var items = _newsRepository.GetNewsByAuthor(authorId).ToList();
+
+            items.ForEach(i => {
+                LinksHelper.AddNewsItemLinks(i, _authorsRepository, _categoriesRepository);
+            });
+
+            return items;
         }
     }
 }

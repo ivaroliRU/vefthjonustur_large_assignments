@@ -1,0 +1,26 @@
+[
+    {
+        "NewsItemId":0,
+        "AuthorId":0
+    },
+    {
+        "NewsItemId":1,
+        "AuthorId":1
+    },
+    {
+        "NewsItemId":2,
+        "AuthorId":2
+    },
+    {
+        "NewsItemId":3,
+        "AuthorId":3
+    },
+    {
+        "NewsItemId":4,
+        "AuthorId":4
+    },
+    {
+        "NewsItemId":5,
+        "AuthorId":5
+    }
+]

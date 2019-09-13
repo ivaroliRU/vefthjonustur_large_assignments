@@ -10,5 +10,6 @@ namespace TechnicalRadiation.Repositories.Interfaces
     {
         IEnumerable<CategoryDetailDto> GetAllCategories();
         CategoryDetailDto GetCategoryById(int categoryId);
+        IEnumerable<CategoryDetailDto> GetCategoriesOfNews(int newsId);
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TechnicalRadiation.Models;
+using TechnicalRadiation.Services.Interfaces;
 
 namespace TechnicalRadiation.Controllers
 {
@@ -11,19 +12,24 @@ namespace TechnicalRadiation.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
+        private readonly ICategoriesService _categoriesService;
+
+        public CategoriesController(ICategoriesService categoriesService){
+            _categoriesService = categoriesService;
+        }
         
         // GET api/categories/
         [HttpGet("")]
         public ActionResult<IEnumerable<string>> GetAllCategories()
         {
-            return new string[] { "woohoooooo! virkar aftur :D" };
+            return Ok(_categoriesService.GetAllCategories());
         }
 
         // GET api/categories/{categoryId}
         [HttpGet("{categoryId:int}")]
         public ActionResult<IEnumerable<string>> GetCategoryById(int categoryId)
         {
-            return new string[] { "Bittu nú, virkar bara allt?" };
+            return Ok(_categoriesService.GetAllCategories());
         }
     }
 }

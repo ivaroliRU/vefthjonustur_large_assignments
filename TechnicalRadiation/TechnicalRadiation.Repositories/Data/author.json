@@ -9,7 +9,7 @@
                 "ModifiedDate": "10/05/2019, 14:11:14"
             },
             {
-                "Id":2,
+                "Id":1,
                 "Name":"Anna Jónsdóttir",
                 "ProfileImgSource" : "Img2",
                 "Bio":"",
@@ -84,7 +84,7 @@
               "Id":9,
               "Name":"María Ólafsdóttir",
               "ProfileImgSource" : "Img9",
-  "Bio":"",
+              "Bio":"",
               "ModifiedBy":"María Ólafsdóttir",
               "CreatedDate":"02/03/2018, 11:15:00",
               "ModifiedDate": "01/12/2018, 13:11:20"
@@ -93,7 +93,7 @@
               "Id":10,
               "Name":"María Ólafsdóttir",
               "ProfileImgSource" : "Img10",
-  "Bio":"",
+              "Bio":"",
               "ModifiedBy":"Elsa Þorsteinsdóttir",
               "CreatedDate":"02/03/2018, 11:15:00",
               "ModifiedDate": "01/12/2018, 13:11:20"
@@ -102,7 +102,7 @@
               "Id":11,
               "Name":"Auður Auðunsdóttir",
               "ProfileImgSource" : "Img11",
-  "Bio":"",
+              "Bio":"",
               "ModifiedBy":"Auður Auðunsdóttir",
               "CreatedDate":"04/03/2018, 12:15:00",
               "ModifiedDate": "02/12/2018, 12:11:20"
