@@ -28,7 +28,7 @@ namespace TechnicalRadiation.Services.Implementation
             var items = _newsRepository.GetAllNewsItems().ToList();
 
             items.ForEach(i => {
-                LinksHelper.AddNewsItemLinks(i, _authorsRepository, _categoriesRepository);
+                ServiceHelper.AddNewsItemLinks(i, _authorsRepository, _categoriesRepository);
             });
 
             return new Envelope<NewsItemDto>(pageNumber, pageSize, items);
@@ -36,7 +36,7 @@ namespace TechnicalRadiation.Services.Implementation
 
         public NewsItemDetailDto GetNewsItemsById(int newsId){
             var item = _newsRepository.GetNewsItemsById(newsId);
-            LinksHelper.AddNewsItemLinks(item, _authorsRepository, _categoriesRepository);
+            ServiceHelper.AddNewsItemLinks(item, _authorsRepository, _categoriesRepository);
             return item;
         }
 
@@ -44,7 +44,7 @@ namespace TechnicalRadiation.Services.Implementation
             var items = _newsRepository.GetNewsByAuthor(authorId).ToList();
 
             items.ForEach(i => {
-                LinksHelper.AddNewsItemLinks(i, _authorsRepository, _categoriesRepository);
+                ServiceHelper.AddNewsItemLinks(i, _authorsRepository, _categoriesRepository);
             });
 
             return items;

@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace TechnicalRadiation.Common
 {
-    public static class LinksHelper
+    public static class ServiceHelper
     {
         public static void AddNewsItemLinks(this NewsItemDto i, IAuthorsRepository _authorsRepository, ICategoriesRepository _categoriesRepository){
             i.Links.AddReference("self", $"/api/{i.Id}");
@@ -37,6 +37,12 @@ namespace TechnicalRadiation.Common
             i.Links.AddReference("self", $"/api/categories/{i.Id}");
             i.Links.AddReference("edit", $"/api/categories/{i.Id}");
             i.Links.AddReference("delete", $"/api/categories/{i.Id}");
+        }
+
+        public static string CreateSlug(String str){
+            String slug = str.ToLower();
+            slug.Replace(' ', '-');
+            return slug;
         }
     }
 }

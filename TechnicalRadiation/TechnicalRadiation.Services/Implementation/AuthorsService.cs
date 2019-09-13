@@ -28,7 +28,7 @@ namespace TechnicalRadiation.Services.Implementation
             var items = _authorsRepository.GetAllAuthors().ToList();
 
             items.ForEach(i => {
-                LinksHelper.AddAuthorLinks(i, _newsRepository);
+                ServiceHelper.AddAuthorLinks(i, _newsRepository);
             });
 
             return items;
@@ -38,7 +38,7 @@ namespace TechnicalRadiation.Services.Implementation
         {
             var item = _authorsRepository.GetAuthorById(Id);
 
-            LinksHelper.AddAuthorLinks(item, _newsRepository);
+            ServiceHelper.AddAuthorLinks(item, _newsRepository);
 
             return item;
         }

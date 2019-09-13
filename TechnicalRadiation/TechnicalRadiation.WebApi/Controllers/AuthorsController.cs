@@ -70,7 +70,7 @@ namespace TechnicalRadiation.Controllers
         }
 
         // DELETE api/authors/id
-        [HttpDelete("{authorId:int")]
+        [HttpDelete("{authorId:int}")]
         [Authorization]
         public ActionResult DeleteAuthorById(int authorId)
         {

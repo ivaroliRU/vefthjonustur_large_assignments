@@ -47,7 +47,7 @@ namespace TechnicalRadiation.Controllers
         {
             return Ok(_categoriesService.GetAllCategories());
         }
-        
+
         // PUT api/categories/id
         [HttpPut("{categoryId:int}")]
         [Authorization]
@@ -62,7 +62,7 @@ namespace TechnicalRadiation.Controllers
         }
 
         // DELETE api/categories/id
-        [HttpDelete("{categoryId:int")]
+        [HttpDelete("{categoryId:int}")]
         [Authorization]
         public ActionResult DeleteCategoryById(int id)
         {

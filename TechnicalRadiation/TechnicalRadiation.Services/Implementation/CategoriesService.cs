@@ -29,7 +29,7 @@ namespace TechnicalRadiation.Services.Implementation
             var items = _categoryRepository.GetAllCategories().ToList();
 
             items.ForEach(i => {
-                LinksHelper.AddCategoryLinks(i);
+                ServiceHelper.AddCategoryLinks(i);
             });
             return items;
         }
@@ -37,7 +37,7 @@ namespace TechnicalRadiation.Services.Implementation
         public CategoryDetailDto GetCategoryById(int Id)
         {
             var item = _categoryRepository.GetCategoryById(Id);
-            LinksHelper.AddCategoryLinks(item);
+            ServiceHelper.AddCategoryLinks(item);
             return item;
         }
 
