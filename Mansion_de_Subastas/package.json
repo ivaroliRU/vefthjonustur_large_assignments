@@ -1,0 +1,11 @@
+{
+  "name": "mansion_de_subastas",
+  "version": "1.0.0",
+  "description": "Large assignment in the course web services",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ívar Óli Sigurðsson and Arna Björg Auðunsdóttir",
+  "license": "ISC"
+}
