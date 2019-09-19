@@ -4,8 +4,17 @@
   "description": "Large assignment in the course web services",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "populate": "node ./data/populate.Db.js mongodb+srv://<vefthonustur>:<vefthonustur>@vefthonustur-kmczd.mongodb.net",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ívar Óli Sigurðsson and Arna Björg Auðunsdóttir",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chalk": "^2.4.2",
+    "cli-progress": "^3.1.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.1"
+  }
 }
