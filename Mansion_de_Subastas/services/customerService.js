@@ -17,7 +17,7 @@ const customerService = () => {
         db.AuctionBid.find({customerId:customerId}, function (err, docs) {
             cb(err, docs);
         });
-    }
+    };
 
 	const createCustomer = (customer, cb) => {
         db.Customer.create(art, function(err){
