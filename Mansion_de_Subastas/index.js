@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.get('/api/arts', function (req, res) {
     artService.getAllArts((err, result) => {
         if (err) {
-            res.status(500).end();
+            return res.status(500).end();
         }
 
         return res.json(result);
@@ -28,11 +28,24 @@ app.get('/api/arts', function (req, res) {
 // http://localhost:3000/api/arts/:id [GET]
 app.get('/api/arts/:id', function (req, res) {
     const artId = req.params.id;
-    return res.json('{}');
+    artService.getArtById(artId, (err, result) => {
+        if (err) {
+            return res.status(500).end();
+        }
+
+        return res.json(result);
+    });
 });
 
 app.post('/api/arts', function(req, res) {
-    return res.status(201).json('{}');
+    const art = req.body.art;
+    artService.createArt(art, (err) => {
+        if (err) {
+            return res.status(500).end();
+        }
+
+        return res.status(201).end();
+    });
 });
 
 /*

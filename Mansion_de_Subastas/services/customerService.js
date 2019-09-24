@@ -14,17 +14,10 @@ const customerService = () => {
     };
 
     const getCustomerAuctionBids = (customerId, cb) => {
-        
-        db.AuctionBid.find({}, function (err, docs) {     
+        db.AuctionBid.find({customerId:customerId}, function (err, docs) {
             cb(err, docs);
         });
-        //db.AuctionBid.find({}, function (err, docs) {console.log(docs);
-        //});
-                    /*.populate('customers')
-                    .exec(function (err, docs) {
-            cb(err, docs);
-        });*/
-    };
+    }
 
 	const createCustomer = (customer, cb) => {
         db.Customer.create(art, function(err){
