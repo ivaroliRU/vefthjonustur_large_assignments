@@ -168,7 +168,13 @@ app.get('/api/auctions/:id', function (req, res) {
 // http://localhost:3000/api/auctions/:id/winner [GET]
 app.get('/api/auctions/:id/winner', function (req, res) {
     const auctionsId = req.params.id;
-    return res.json('{}');
+    auctionService.getAuctionWinner(auctionsId, (err, result) => {
+        if (err)
+        {
+            return res.status(500).endl();
+        }
+        return res.json(result);
+    });
 });
 
 // http://localhost:3000/api/auctions/:id/winner [Post]

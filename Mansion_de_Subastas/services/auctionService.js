@@ -14,8 +14,12 @@ const auctionService = () => {
     };
 
     const getAuctionWinner = (auctionId, cb) => {
-        db.Auction.findById(auctionId, function (err, doc) {
-            cb(err, doc);
+        db.Customer.findOne({ auctionId: auctionId })
+        .populate('auctions')
+        .populate('auctionBids')
+        .sort('price')
+        .exec(function (err, doc) {
+            cb(err,doc);
         });
     };
 
