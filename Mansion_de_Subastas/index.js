@@ -38,7 +38,7 @@ app.get('/api/arts/:id', function (req, res) {
 });
 
 app.post('/api/arts', function(req, res) {
-    const art = req.body.art;
+    const art = req.body;
     artService.createArt(art, (err) => {
         if (err) {
             return res.status(500).end();
@@ -56,17 +56,35 @@ app.post('/api/arts', function(req, res) {
 
 // http://localhost:3000/api/artists [GET]
 app.get('/api/artists', function (req, res) {
-    return res.json('{}');
+    artistService.getAllArtists((err, result) => {
+        if (err) {
+            return res.status(500).end();
+        }
+        return res.json(result);
+    });
 });
 
 // http://localhost:3000/api/artists/:id [GET]
 app.get('/api/artists/:id', function (req, res) {
     const artistsId = req.params.id;
-    return res.json('{}');
+    artistService.getArtistById(artistsId, (err, result) => {
+        if (err) {
+            return res.status(500).end();
+        }
+
+        return res.json(result);
+    });
 });
 
 app.post('/api/artists', function(req, res) {
-    return res.status(201).json('{}');
+    const artist = req.body;
+    artistService.createArt(artist, (err) => {
+        if (err) {
+            return res.status(500).end();
+        }
+
+        return res.status(201).end();
+    });
 });
 
 /*
@@ -77,17 +95,35 @@ app.post('/api/artists', function(req, res) {
 
 // http://localhost:3000/api/customers [GET]
 app.get('/api/customers', function (req, res) {
-    return res.json('{}');
+    customerService.getAllCustomers((err, result) => {
+        if (err) {
+            return res.status(500).end();
+        }
+        return res.json(result);
+    });
 });
 
 // http://localhost:3000/api/customers/:id [GET]
 app.get('/api/customers/:id', function (req, res) {
     const customersId = req.params.id;
-    return res.json('{}');
+    customerService.getCustomerById(customersId, (err, result) => {
+        if (err) {
+            return res.status(500).end();
+        }
+
+        return res.json(result);
+    });
 });
 
 app.post('/api/customers', function(req, res) {
-    return res.status(201).json('{}');
+    const customer = req.body;
+    customerService.createCustomer(customer, (err) => {
+        if (err) {
+            return res.status(500).end();
+        }
+
+        return res.status(201).end();
+    });
 });
 
 /*

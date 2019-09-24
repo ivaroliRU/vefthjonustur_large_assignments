@@ -20,7 +20,7 @@ const customerService = () => {
     }
 
 	const createCustomer = (customer, cb) => {
-        db.Customer.create(art, function(err){
+        db.Customer.create(customer, function(err){
             cb(err);
         });
     };
