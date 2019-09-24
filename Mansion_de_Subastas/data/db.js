@@ -5,12 +5,12 @@ const auctionSchema = require('../schemas/auction');
 const auctionBidSchema = require('../schemas/auctionBid');
 const customerSchema = require('../schemas/customer');
 
-const connection = mongoose.createConnection('mongodb+srv://vefthonustur:vefthonustur@vefthonustur-kmczd.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true });
+const connection = mongoose.createConnection('mongodb+srv://vefthonustur:vefthonustur@vefthonustur-kmczd.mongodb.net/vefthonustur', { useNewUrlParser: true });
 
 module.exports = {
-    Art: connection.model('Art', artSchema),
-    Artist: connection.model('Artist', artistSchema),
-    Auction: connection.model('Auction', auctionSchema),
-    AuctionBid: connection.model('AuctionBid', auctionBidSchema),
-    Customer: connection.model('Customer', customerSchema)
+    Art: connection.model('arts', artSchema),
+    Artist: connection.model('artists', artistSchema),
+    Auction: connection.model('auctions', auctionSchema),
+    AuctionBid: connection.model('auctionBids', auctionBidSchema),
+    Customer: connection.model('customers', customerSchema)
 };

@@ -1,5 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const artService = require('./services/artService');
+const artistService = require('./services/artistService');
+const auctionService = require('./services/auctionService');
+const customerService = require('./services/customerService');
 const app = express();
 
 app.use(bodyParser.json());
@@ -12,7 +16,13 @@ app.use(bodyParser.json());
 
 // http://localhost:3000/api/arts [GET]
 app.get('/api/arts', function (req, res) {
-    return res.json('{}');
+    artService.getAllArts((err, result) => {
+        if (err) {
+            res.status(500).end();
+        }
+
+        return res.json(result);
+    });
 });
 
 // http://localhost:3000/api/arts/:id [GET]
@@ -75,7 +85,11 @@ app.post('/api/customers', function(req, res) {
 
 // http://localhost:3000/api/customers/:id/auction-bids [GET]
 app.get('/api/customers/:id/auction-bids', function (req, res) {
-    return res.json('{}');
+    var id = req.params.id;
+
+    customerService.getCustomerAuctionBids(id, function(err, docs){
+        return res.json(docs);
+    });
 });
 
 // http://localhost:3000/api/auctions [GET]

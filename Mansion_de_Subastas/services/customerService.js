@@ -1,18 +1,35 @@
+var db = require('../data/db');
+
 const customerService = () => {
-    const getAllCustomers = (cb, errorCb) => {
-        // Your implementation goes here
+    const getAllCustomers = (cb) => {
+        db.Customer.find({}, function (err, docs) {            
+            cb(err, docs);
+        });
     };
 
-    const getCustomerById = (id, cb, errorCb) => {
-        // Your implementation goes here
+    const getCustomerById = (id, cb) => {
+        db.Customer.findById(id, function (err, doc) {
+            cb(err, doc);
+        });
     };
 
-    const getCustomerAuctionBids = (customerId, cb, errorCb) => {
-        // Your implementation goes here
+    const getCustomerAuctionBids = (customerId, cb) => {
+        
+        db.AuctionBid.find({}, function (err, docs) {     
+            cb(err, docs);
+        });
+        //db.AuctionBid.find({}, function (err, docs) {console.log(docs);
+        //});
+                    /*.populate('customers')
+                    .exec(function (err, docs) {
+            cb(err, docs);
+        });*/
     };
 
-	const createCustomer = (customer, cb, errorCb) => {
-        // Your implementation goes here
+	const createCustomer = (customer, cb) => {
+        db.Customer.create(art, function(err){
+            cb(err);
+        });
     };
 
     return {

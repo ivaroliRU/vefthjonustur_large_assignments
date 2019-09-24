@@ -1,3 +1,5 @@
+var db = require('../data/db');
+
 const auctionService = () => {
     const getAllAuctions = (cb, errorCb) => {
         // Your implementation goes here
