@@ -143,7 +143,7 @@ app.get('/api/customers/:id/auction-bids', function (req, res) {
 
 // http://localhost:3000/api/auctions [GET]
 app.get('/api/auctions', function (req, res) {
-    auctionService.getAllAuctions(auctions, (err, result) => {
+    auctionService.getAllAuctions((err, result) => {
         if (err)
         {
             return res.status(500).end();
@@ -158,7 +158,7 @@ app.get('/api/auctions/:id', function (req, res) {
     auctionService.getAuctionById(auctionsId, (err, result) => {
         if (err)
         {
-            return res.status(500).endl();
+            return res.status(500).end();
         }
         return res.json(result);
     });
