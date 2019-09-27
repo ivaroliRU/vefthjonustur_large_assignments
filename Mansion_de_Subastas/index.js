@@ -143,13 +143,12 @@ app.get('/api/customers/:id/auction-bids', function (req, res) {
 
 // http://localhost:3000/api/auctions [GET]
 app.get('/api/auctions', function (req, res) {
-    const auctions = req.body;
-    auctionService.createAuction(auctions, (err) => {
-        if (err)
-        {
+    auctionService.getAllAuctions((err, result) => {
+        if (err) {
             return res.status(500).end();
         }
-        return res.status(201).end();
+        
+        return res.json(result);
     });
 });
 
@@ -159,7 +158,7 @@ app.get('/api/auctions/:id', function (req, res) {
     auctionService.getAuctionById(auctionsId, (err, result) => {
         if (err)
         {
-            return res.status(500).endl();
+            return res.status(404).end();
         }
         return res.json(result);
     });
@@ -168,10 +167,12 @@ app.get('/api/auctions/:id', function (req, res) {
 // http://localhost:3000/api/auctions/:id/winner [GET]
 app.get('/api/auctions/:id/winner', function (req, res) {
     const auctionsId = req.params.id;
+    console.log("Getting auction winner of: " + auctionsId);
+    
     auctionService.getAuctionWinner(auctionsId, (err, result) => {
         if (err)
         {
-            return res.status(500).endl();
+            return res.status(404).end();
         }
         return res.json(result);
     });

@@ -2,7 +2,7 @@ const Schema = require('mongoose').Schema;
 
 module.exports = new Schema({
     name: { type: String, required: true },
-    artistId: { type: Schema.Types.ObjectId, required: true },
+    artistId: { type: Schema.Types.ObjectId, ref: 'artists', required: true },
     date: { type: Date, required: true },
     images: [String],
     description: { type: String},
