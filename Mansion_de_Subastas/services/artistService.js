@@ -13,8 +13,8 @@ const artistService = () => {
         });
     };
 
-    const createArtist = (art, cb) => {
-        db.Artist.create(art, function(err){
+    const createArtist = (artist, cb) => {
+        db.Artist.create(artist, function(err){
             cb(err);
         });
     };

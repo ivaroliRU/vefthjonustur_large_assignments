@@ -1,8 +1,10 @@
 var db = require('../data/db');
 
 const customerService = () => {
-    const getAllCustomers = (cb) => {
-        db.Customer.find({}, function (err, docs) {            
+    const getAllCustomers = (cb) => {        
+        db.Customer.find({}, function (err, docs) { 
+            console.log(docs);
+                       
             cb(err, docs);
         });
     };

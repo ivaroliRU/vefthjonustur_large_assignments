@@ -1,9 +1,9 @@
 const Schema = require('mongoose').Schema;
 
 module.exports = new Schema({
-    name: { type: String, required: true },
+    title: { type: String, required: true },
     artistId: { type: Schema.Types.ObjectId, ref: 'artists', required: true },
-    date: { type: Date, required: true },
+    date: { type: Date, default: Date.now, required: true },
     images: [String],
     description: { type: String},
     isAuctionItem: { type: Boolean, default: false },

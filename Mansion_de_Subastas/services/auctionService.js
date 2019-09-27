@@ -13,6 +13,7 @@ const auctionService = () => {
         });
     };
 
+    //klara
     const getAuctionWinner = (auctionId, cb) => {
         db.AuctionBid.findOne({auctionId:auctionId})
         .sort({"price" : -1})
@@ -45,7 +46,11 @@ const auctionService = () => {
         });
     };
 
-    const placeNewBid = (auctionId, customerId, price, cb, errcb) => {
+    //klara
+    const placeNewBid = (auctionId, bid, cb, errcb) => {
+        //bid must be higher than minimum and highest bid => 412
+        //auction has not passed it's end date
+
         var bid = { auctionId: auctionId, customerId: customerId, price: price };
         db.AuctionBid.create(bid, function (err) {
             cb(err);
