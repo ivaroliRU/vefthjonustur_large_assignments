@@ -144,17 +144,10 @@ app.get('/api/customers/:id/auction-bids', function (req, res) {
 // http://localhost:3000/api/auctions [GET]
 app.get('/api/auctions', function (req, res) {
     auctionService.getAllAuctions((err, result) => {
-<<<<<<< HEAD
         if (err) {
             return res.status(500).end();
         }
         
-=======
-        if (err)
-        {
-            return res.status(500).end();
-        }
->>>>>>> a87e0d44bd3aec10712783ea87408e782ec447da
         return res.json(result);
     });
 });
@@ -165,11 +158,7 @@ app.get('/api/auctions/:id', function (req, res) {
     auctionService.getAuctionById(auctionsId, (err, result) => {
         if (err)
         {
-<<<<<<< HEAD
             return res.status(404).end();
-=======
-            return res.status(500).end();
->>>>>>> a87e0d44bd3aec10712783ea87408e782ec447da
         }
         return res.json(result);
     });
@@ -184,11 +173,7 @@ app.get('/api/auctions/:id/winner', function (req, res) {
     auctionService.getAuctionWinner(auctionsId, (err, result) => {
         if (err)
         {
-<<<<<<< HEAD
             return res.status(404).end();
-=======
-            return res.status(409).end();
->>>>>>> a87e0d44bd3aec10712783ea87408e782ec447da
         }
         return res.json(result).send('This auction had no bids');
     });
