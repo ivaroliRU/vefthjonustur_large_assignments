@@ -50,10 +50,25 @@ const auctionService = () => {
     const placeNewBid = (auctionId, bid, cb, errcb) => {
         //bid must be higher than minimum and highest bid => 412
         //auction has not passed it's end date
+        db.Auction.findById(auctionId, function (err, doc) {
+            getMaxBid(auctionId, (max_bid)=>{
+                if(doc.endDate > Date.now()){
+                    if(doc.minimumPrice < bid.price || max_bid.price < bid.price){
+                        cb(err)
+                    }
+                    errcb(412);
+                }
+                errcb(403);
+            });
+        });
+    };
 
-        var bid = { auctionId: auctionId, customerId: customerId, price: price };
-        db.AuctionBid.create(bid, function (err) {
-            cb(err);
+    const getMaxBid = (id, cb)=>{
+        db.AuctionBid.findOne({auctionId:id})
+        .sort({"price" : -1})
+        .limit(1)
+        .exec(function(err, bid){
+            cb(bid);
         });
     }
 

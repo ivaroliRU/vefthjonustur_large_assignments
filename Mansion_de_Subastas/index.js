@@ -196,6 +196,7 @@ app.get('/api/auctions/:id/winner', function (req, res) {
     });
 });
 
+// http://localhost:3000/api/auctions/:id/bids [GET]
 app.get('/api/auctions/:id/bids', function (req, res) {
     const auctionsId = req.params.id;
     auctionService.getAuctionBidsWithinAuction(auctionsId, (err, result) => {
@@ -207,10 +208,13 @@ app.get('/api/auctions/:id/bids', function (req, res) {
     });
 });
 
+//Klára place new bids
 // http://localhost:3000/api/auctions/:id/bids [Post]
 app.post('/api/auctions/:id/bids', function (req, res) {
     const auctionsId = req.params.id;
     const bid = req.body;
+
+    bid.auctionId = auctionsId;
 
     auctionService.placeNewBid(auctionsId, bid, (err) => {
         if (err)
