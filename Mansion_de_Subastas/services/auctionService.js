@@ -20,15 +20,15 @@ const auctionService = () => {
         .limit(1)
         .exec(function(err, bid){
             db.Auction.findById(auctionId, function(err, auction){
-                if(err != undefined){
-                    cb(err, null);
-                }
-
-                var date = new Date(auction.endDate), CurrentDate = new Date();                
-                if(date <= CurrentDate){
-                    db.Customer.findOne({_id: bid.customerId}, function(err, customer){                        
+                var date = new Date(auction.endDate), CurrentDate = new Date(); 
+                               
+                if(date.getTime() >= CurrentDate.getTime()){                    
+                    db.Customer.findOne({_id: bid.customerId}, function(err, customer){  
                         cb(err, customer);
                     });
+                }
+                else{
+                    cb(new Error(), null)
                 }
             });
         });
